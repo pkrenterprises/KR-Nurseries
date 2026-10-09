@@ -1,41 +1,2239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#1b5e20">
-<meta name="description" content="KR Nurseries — quality plants, saplings, nursery products and agricultural solutions. Visit our Nayanapalle and Ragavapalli branches in Andhra Pradesh.">
-<title>KR Nurseries | Grow Better. Grow Green.</title><link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071d13">
+
+<meta name="description"
+content="KR Nurseries — Premium plants, agricultural saplings, garden plants, bulk farm supply and nursery solutions across Andhra Pradesh, Telangana, Tamil Nadu and Karnataka.">
+
+<meta name="keywords"
+content="KR Nurseries, Nayanapalle nursery, Kuppam nursery, agricultural plants, fruit plants, farm plants, garden plants, bulk plants, Andhra Pradesh nursery">
+
+<title>KR Nurseries | Grow Better. Grow Green.</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* =========================================================
+   KR NURSERIES — PREMIUM EXPERIENCE OVERRIDE
+   ========================================================= */
+
+:root{
+    --kr-dark:#061810;
+    --kr-dark-2:#0a2418;
+    --kr-green:#087443;
+    --kr-green-2:#10a866;
+    --kr-lime:#b7ef72;
+    --kr-mint:#dfffe9;
+    --kr-white:#ffffff;
+    --kr-soft:#f4faf5;
+    --kr-text:#10231a;
+    --kr-muted:#617168;
+    --kr-border:rgba(16,45,31,.10);
+    --kr-shadow:0 25px 70px rgba(4,35,20,.13);
+    --kr-radius:28px;
+}
+
+/* Base */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:
+        radial-gradient(circle at 10% 5%,rgba(16,168,102,.06),transparent 30%),
+        radial-gradient(circle at 90% 25%,rgba(183,239,114,.08),transparent 28%),
+        #f8fcf9;
+    color:var(--kr-text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+        radial-gradient(circle,rgba(8,116,67,.09) 1px,transparent 1px);
+    background-size:32px 32px;
+    opacity:.25;
+}
+
+/* Selection */
+
+::selection{
+    background:var(--kr-green);
+    color:white;
+}
+
+/* =========================================================
+   PREMIUM NAVIGATION
+   ========================================================= */
+
+.nav{
+    position:sticky!important;
+    top:16px;
+    z-index:1000;
+    width:min(1180px,calc(100% - 32px));
+    margin:16px auto 0;
+    padding:12px 16px;
+    border-radius:22px;
+    background:rgba(255,255,255,.78)!important;
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+    border:1px solid rgba(255,255,255,.85);
+    box-shadow:0 15px 50px rgba(8,55,32,.10);
+}
+
+.brand{
+    text-decoration:none;
+    color:var(--kr-dark)!important;
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.mark{
+    width:46px!important;
+    height:46px!important;
+    display:grid!important;
+    place-items:center;
+    border-radius:15px!important;
+    color:white!important;
+    font-weight:900;
+    letter-spacing:-1px;
+    background:
+        linear-gradient(135deg,#063c25,#0b9b59 65%,#b7ef72)!important;
+    box-shadow:
+        0 8px 25px rgba(8,116,67,.30),
+        inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+.brand b{
+    font-size:1.05rem;
+    letter-spacing:-.3px;
+}
+
+.brand small{
+    color:#718078!important;
+}
+
+.nav nav{
+    gap:5px!important;
+}
+
+.nav nav a,
+.admin-nav{
+    padding:10px 13px!important;
+    border-radius:12px!important;
+    transition:.3s ease!important;
+}
+
+.nav nav a:hover{
+    background:#eaf8ee!important;
+    color:var(--kr-green)!important;
+    transform:translateY(-2px);
+}
+
+.admin-nav{
+    border:0;
+    background:var(--kr-dark)!important;
+    color:white!important;
+    cursor:pointer;
+    box-shadow:0 7px 18px rgba(6,24,16,.18);
+}
+
+.admin-nav:hover{
+    background:var(--kr-green)!important;
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    position:relative;
+    min-height:680px!important;
+    width:min(1180px,calc(100% - 32px));
+    margin:28px auto 0;
+    border-radius:42px;
+    overflow:hidden;
+    padding:90px 7%;
+    box-sizing:border-box;
+    background:
+        radial-gradient(circle at 82% 28%,rgba(183,239,114,.20),transparent 22%),
+        radial-gradient(circle at 70% 80%,rgba(16,168,102,.20),transparent 30%),
+        linear-gradient(135deg,#04140d,#092719 58%,#0c3c25);
+    color:white;
+    box-shadow:
+        0 40px 100px rgba(3,35,20,.24),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    border:1px solid rgba(183,239,114,.15);
+    right:-130px;
+    top:-160px;
+    animation:heroOrbit 16s linear infinite;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.07);
+    right:-240px;
+    top:-260px;
+}
+
+.hero-copy{
+    position:relative;
+    z-index:5;
+    max-width:690px;
+    animation:heroIn 1s ease both;
+}
+
+.eyebrow{
+    letter-spacing:.18em!important;
+    font-size:.72rem!important;
+    font-weight:800!important;
+    color:var(--kr-green-2)!important;
+}
+
+.hero .eyebrow{
+    color:var(--kr-lime)!important;
+}
+
+.hero h1{
+    font-size:clamp(3.5rem,8vw,7.5rem)!important;
+    line-height:.88!important;
+    letter-spacing:-.075em!important;
+    margin:25px 0!important;
+    font-weight:950!important;
+}
+
+.hero h1 em{
+    font-style:normal;
+    color:var(--kr-lime);
+    text-shadow:0 0 40px rgba(183,239,114,.15);
+}
+
+.hero-copy>p{
+    max-width:650px;
+    font-size:1.08rem!important;
+    line-height:1.8!important;
+    color:rgba(255,255,255,.72)!important;
+}
+
+.actions{
+    margin-top:34px!important;
+    gap:12px!important;
+}
+
+.btn{
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease!important;
+}
+
+.btn:hover{
+    transform:translateY(-4px)!important;
+}
+
+.hero .btn.primary{
+    background:linear-gradient(135deg,#b7ef72,#6bd46f)!important;
+    color:#082015!important;
+    box-shadow:0 12px 35px rgba(183,239,114,.22);
+}
+
+.hero .btn.ghost{
+    color:white!important;
+    border-color:rgba(255,255,255,.20)!important;
+    background:rgba(255,255,255,.07)!important;
+    backdrop-filter:blur(10px);
+}
+
+.hero .btn.ghost:hover{
+    background:rgba(255,255,255,.14)!important;
+}
+
+.trust{
+    margin-top:38px!important;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px!important;
+}
+
+.trust span{
+    padding:9px 13px!important;
+    border-radius:999px!important;
+    background:rgba(255,255,255,.07)!important;
+    border:1px solid rgba(255,255,255,.09)!important;
+    color:rgba(255,255,255,.78)!important;
+    backdrop-filter:blur(8px);
+}
+
+/* Animated hero plant */
+
+.hero-art{
+    position:absolute!important;
+    width:48%;
+    height:100%;
+    right:0;
+    top:0;
+    opacity:.95;
+    pointer-events:none;
+}
+
+.hero-art .sun{
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    right:17%;
+    top:18%;
+    background:
+        radial-gradient(circle,#dfffaa 0%,#9de879 35%,rgba(157,232,121,.12) 68%,transparent 70%);
+    filter:blur(.3px);
+    animation:sunPulse 5s ease-in-out infinite;
+}
+
+.hero-art .plant{
+    position:absolute;
+    width:220px;
+    height:360px;
+    right:25%;
+    bottom:5%;
+    animation:plantFloat 5s ease-in-out infinite;
+}
+
+.hero-art .pot{
+    position:absolute;
+    bottom:0;
+    left:42px;
+    width:135px;
+    height:100px;
+    border-radius:12px 12px 35px 35px;
+    background:linear-gradient(135deg,#d98951,#8d482a);
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
+}
+
+.hero-art .stem{
+    position:absolute;
+    width:12px;
+    height:220px;
+    background:linear-gradient(#54c969,#1b783f);
+    left:104px;
+    bottom:70px;
+    border-radius:99px;
+    transform:rotate(-4deg);
+}
+
+.hero-art .leaf{
+    position:absolute;
+    width:100px;
+    height:55px;
+    background:linear-gradient(135deg,#b7ef72,#22a85e);
+    border-radius:100% 0 100% 0;
+    box-shadow:0 8px 25px rgba(40,180,90,.18);
+}
+
+.hero-art .l1{
+    left:5px;
+    bottom:205px;
+    transform:rotate(-24deg);
+}
+
+.hero-art .l2{
+    right:0;
+    bottom:150px;
+    transform:rotate(24deg) scaleX(-1);
+}
+
+.hero-art .l3{
+    left:25px;
+    bottom:275px;
+    transform:rotate(-35deg);
+}
+
+/* =========================================================
+   STRIP
+   ========================================================= */
+
+.strip{
+    width:min(1120px,calc(100% - 40px));
+    margin:-25px auto 0!important;
+    position:relative;
+    z-index:10;
+    padding:8px!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px!important;
+    border-radius:22px!important;
+    background:rgba(255,255,255,.94)!important;
+    box-shadow:0 20px 55px rgba(8,55,32,.12)!important;
+    border:1px solid rgba(8,116,67,.07);
+}
+
+.strip div{
+    padding:20px!important;
+    border-radius:16px;
+    transition:.3s ease;
+}
+
+.strip div:hover{
+    background:#eff9f1;
+    transform:translateY(-3px);
+}
+
+.strip strong{
+    display:block;
+    color:var(--kr-green);
+    font-size:.72rem;
+    margin-bottom:6px;
+}
+
+.strip span{
+    font-weight:750;
+}
+
+/* =========================================================
+   DELIVERY
+   ========================================================= */
+
+.delivery-banner{
+    width:min(1120px,calc(100% - 40px));
+    margin:80px auto 0!important;
+    padding:42px!important;
+    border-radius:30px!important;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(135deg,#e7f9e8,#f7fff7);
+    border:1px solid rgba(8,116,67,.09);
+    box-shadow:var(--kr-shadow);
+}
+
+.delivery-banner::after{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    background:rgba(183,239,114,.20);
+    right:-70px;
+    top:-90px;
+}
+
+.delivery-banner h2{
+    font-size:clamp(1.8rem,4vw,3rem)!important;
+    letter-spacing:-.04em;
+    margin:10px 0!important;
+}
+
+.delivery-banner p{
+    color:var(--kr-muted);
+}
+
+.delivery-banner strong{
+    display:inline-block;
+    margin-top:12px;
+    padding:12px 17px;
+    border-radius:14px;
+    background:#dff8df;
+    color:#126b3e;
+}
+
+.delivery-banner small{
+    display:block;
+    margin-top:12px;
+    color:#748078;
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section{
+    width:min(1120px,calc(100% - 40px));
+    margin:110px auto!important;
+}
+
+.section h2{
+    font-size:clamp(2.4rem,5vw,4.5rem)!important;
+    line-height:.98!important;
+    letter-spacing:-.06em!important;
+    color:var(--kr-dark)!important;
+}
+
+.section-head{
+    margin-bottom:42px!important;
+}
+
+.section-head>p{
+    color:var(--kr-muted)!important;
+    line-height:1.8;
+}
+
+/* About */
+
+.about{
+    display:grid!important;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:end;
+}
+
+.about .text{
+    color:#637068;
+    line-height:1.9;
+    font-size:1.04rem;
+}
+
+/* =========================================================
+   PLANT CARDS
+   ========================================================= */
+
+.grid{
+    gap:18px!important;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px!important;
+    border:1px solid var(--kr-border)!important;
+    background:rgba(255,255,255,.86)!important;
+    box-shadow:0 15px 40px rgba(7,52,29,.07)!important;
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s ease,
+        border-color .45s ease!important;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    right:-50px;
+    top:-50px;
+    background:rgba(183,239,114,.13);
+    transition:.45s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px)!important;
+    box-shadow:0 28px 65px rgba(7,52,29,.13)!important;
+    border-color:rgba(8,116,67,.18)!important;
+}
+
+.card:hover::before{
+    transform:scale(1.7);
+}
+
+.card .icon{
+    font-size:2.2rem!important;
+    width:58px;
+    height:58px;
+    display:grid;
+    place-items:center;
+    border-radius:18px;
+    background:#edf9ef;
+    margin-bottom:18px;
+}
+
+.card h3{
+    position:relative;
+    z-index:2;
+}
+
+.card p{
+    color:var(--kr-muted)!important;
+    line-height:1.7;
+}
+
+.card a{
+    color:var(--kr-green)!important;
+    font-weight:800;
+}
+
+/* Featured */
+
+.card.featured{
+    background:
+        linear-gradient(145deg,#062519,#0d5433)!important;
+    color:white!important;
+    box-shadow:0 25px 65px rgba(5,60,33,.24)!important;
+}
+
+.card.featured h3,
+.card.featured p{
+    color:white!important;
+}
+
+.card.featured p{
+    color:rgba(255,255,255,.68)!important;
+}
+
+.card.featured a{
+    color:var(--kr-lime)!important;
+}
+
+/* =========================================================
+   BRANCHES
+   ========================================================= */
+
+.branch-grid{
+    gap:20px!important;
+}
+
+.branch-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:30px!important;
+    padding:34px!important;
+    background:white!important;
+    border:1px solid var(--kr-border)!important;
+    box-shadow:var(--kr-shadow)!important;
+    transition:.4s ease!important;
+}
+
+.branch-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 35px 80px rgba(7,52,29,.15)!important;
+}
+
+.branch-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.branch-no{
+    font-size:2.5rem!important;
+    font-weight:900!important;
+    color:#d7e7db!important;
+}
+
+.branch-tag{
+    padding:8px 12px;
+    border-radius:999px;
+    background:#eaf8ed;
+    color:var(--kr-green);
+    font-size:.68rem;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+.branch-card h3{
+    font-size:1.55rem!important;
+    letter-spacing:-.03em;
+}
+
+.address{
+    color:var(--kr-muted)!important;
+    line-height:1.8;
+}
+
+.phone-row a{
+    font-weight:850!important;
+    color:var(--kr-green)!important;
+}
+
+.branch-actions{
+    margin-top:25px!important;
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.service-panel{
+    border-radius:35px!important;
+    padding:45px!important;
+    background:
+        radial-gradient(circle at 90% 20%,rgba(183,239,114,.18),transparent 25%),
+        linear-gradient(135deg,#071c12,#0d3b25)!important;
+    color:white!important;
+    box-shadow:0 35px 90px rgba(4,35,20,.18);
+}
+
+.service-panel h2{
+    color:white!important;
+    max-width:700px;
+}
+
+.service-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:35px;
+}
+
+.service-list>div{
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s ease;
+}
+
+.service-list>div:hover{
+    background:rgba(255,255,255,.10);
+    transform:translateY(-4px);
+}
+
+.service-list b{
+    display:block;
+    margin-bottom:8px;
+}
+
+.service-list span{
+    color:rgba(255,255,255,.65);
+    line-height:1.6;
+}
+
+.service-list strong{
+    color:var(--kr-lime);
+}
+
+.quote{
+    margin-top:22px!important;
+    border-radius:30px!important;
+    background:#eff9f1!important;
+    border:1px solid rgba(8,116,67,.08)!important;
+}
+
+.quote span{
+    color:var(--kr-green)!important;
+}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-slider{
+    position:relative;
+}
+
+.gallery-viewport{
+    overflow:hidden!important;
+    border-radius:28px!important;
+}
+
+.gallery-track{
+    transition:transform .8s cubic-bezier(.2,.8,.2,1)!important;
+}
+
+.gallery-item{
+    border-radius:22px!important;
+    overflow:hidden!important;
+    box-shadow:0 18px 50px rgba(5,45,25,.10)!important;
+    transition:.4s ease!important;
+}
+
+.gallery-item:hover{
+    transform:scale(.985) translateY(-5px);
+}
+
+.gallery-item img{
+    transition:transform .7s ease!important;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-arrow{
+    width:52px!important;
+    height:52px!important;
+    border-radius:50%!important;
+    border:1px solid rgba(255,255,255,.5)!important;
+    background:rgba(255,255,255,.9)!important;
+    color:var(--kr-dark)!important;
+    box-shadow:0 10px 30px rgba(0,0,0,.12)!important;
+    z-index:20;
+    transition:.3s ease!important;
+}
+
+.gallery-arrow:hover{
+    background:var(--kr-green)!important;
+    color:white!important;
+    transform:scale(1.08);
+}
+
+.gallery-dots button{
+    transition:.3s ease!important;
+}
+
+.gallery-dots button.active{
+    width:28px!important;
+    border-radius:999px!important;
+    background:var(--kr-green)!important;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact{
+    display:grid!important;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.contact-copy{
+    padding:45px!important;
+    border-radius:34px!important;
+    background:
+        radial-gradient(circle at 90% 10%,rgba(183,239,114,.15),transparent 25%),
+        #082219!important;
+    color:white!important;
+    box-shadow:0 30px 80px rgba(4,35,20,.20);
+}
+
+.contact-copy h2{
+    color:white!important;
+}
+
+.contact-copy p{
+    color:rgba(255,255,255,.66)!important;
+    line-height:1.8;
+}
+
+.contact-items{
+    display:flex;
+    flex-direction:column;
+    gap:10px!important;
+    margin-top:25px;
+}
+
+.contact-items a{
+    color:var(--kr-lime)!important;
+    text-decoration:none;
+    font-weight:800;
+}
+
+.contact-items span{
+    color:rgba(255,255,255,.58);
+}
+
+#enquiry{
+    padding:35px!important;
+    border-radius:30px!important;
+    background:white!important;
+    border:1px solid var(--kr-border)!important;
+    box-shadow:var(--kr-shadow)!important;
+}
+
+#enquiry input,
+#enquiry select,
+#enquiry textarea{
+    width:100%;
+    box-sizing:border-box;
+    border:1px solid #dfe9e1!important;
+    border-radius:14px!important;
+    background:#f9fcf9!important;
+    transition:.25s ease!important;
+}
+
+#enquiry input:focus,
+#enquiry select:focus,
+#enquiry textarea:focus{
+    outline:none!important;
+    border-color:var(--kr-green)!important;
+    box-shadow:0 0 0 4px rgba(8,116,67,.08)!important;
+    background:white!important;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    margin-top:120px!important;
+    padding:60px max(20px,calc((100% - 1120px)/2))!important;
+    background:#04130c!important;
+    color:white!important;
+    border-radius:45px 45px 0 0;
+}
+
+footer p{
+    color:rgba(255,255,255,.55)!important;
+}
+
+/* =========================================================
+   ADMIN MODAL
+   ========================================================= */
+
+.modal{
+    backdrop-filter:blur(15px)!important;
+    background:rgba(1,16,9,.68)!important;
+}
+
+.modal-card{
+    border-radius:28px!important;
+    border:1px solid rgba(255,255,255,.12)!important;
+    box-shadow:0 35px 100px rgba(0,0,0,.35)!important;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================================================
+   FLOATING DECORATION
+   ========================================================= */
+
+.floating-leaf{
+    position:absolute;
+    width:16px;
+    height:30px;
+    border-radius:100% 0 100% 0;
+    background:rgba(183,239,114,.20);
+    pointer-events:none;
+    animation:leafFloat 8s ease-in-out infinite;
+}
+
+.leaf-a{
+    top:18%;
+    left:4%;
+}
+
+.leaf-b{
+    top:65%;
+    right:3%;
+    animation-delay:2s;
+}
+
+.leaf-c{
+    top:42%;
+    right:8%;
+    animation-delay:4s;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+@keyframes heroOrbit{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes sunPulse{
+    0%,100%{
+        transform:scale(1);
+        opacity:.7;
+    }
+    50%{
+        transform:scale(1.08);
+        opacity:1;
+    }
+}
+
+@keyframes plantFloat{
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+    50%{
+        transform:translateY(-15px) rotate(1deg);
+    }
+}
+
+@keyframes leafFloat{
+    0%,100%{
+        transform:translateY(0) rotate(0);
+        opacity:.2;
+    }
+    50%{
+        transform:translateY(-40px) rotate(30deg);
+        opacity:.65;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .nav{
+        top:8px;
+        margin-top:8px;
+    }
+
+    .hero{
+        min-height:720px!important;
+        padding:70px 7%;
+    }
+
+    .hero-art{
+        opacity:.35;
+        width:100%;
+    }
+
+    .hero-copy{
+        position:relative;
+        z-index:10;
+    }
+
+    .strip{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about,
+    .contact{
+        grid-template-columns:1fr!important;
+        gap:35px;
+    }
+
+    .service-list{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:620px){
+
+    .nav{
+        border-radius:18px;
+    }
+
+    .brand small{
+        display:none;
+    }
+
+    .hero{
+        width:calc(100% - 20px);
+        border-radius:28px;
+        padding:65px 25px;
+    }
+
+    .hero h1{
+        font-size:3.7rem!important;
+    }
+
+    .hero-copy>p{
+        font-size:.98rem!important;
+    }
+
+    .actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .actions .btn{
+        text-align:center;
+    }
+
+    .strip{
+        width:calc(100% - 25px);
+        grid-template-columns:1fr;
+        margin-top:-15px!important;
+    }
+
+    .section,
+    .delivery-banner{
+        width:calc(100% - 25px);
+    }
+
+    .section{
+        margin:80px auto!important;
+    }
+
+    .delivery-banner{
+        padding:28px!important;
+    }
+
+    .about .text{
+        font-size:.98rem;
+    }
+
+    .service-panel{
+        padding:28px!important;
+    }
+
+    .contact-copy{
+        padding:30px!important;
+    }
+
+    #enquiry{
+        padding:25px!important;
+    }
+
+    footer{
+        border-radius:30px 30px 0 0;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
-<header class="nav"><a class="brand" href="#home"><span class="mark">KR</span><span><b>KR Nurseries</b><small>Plants • Agriculture • Green Living</small></span></a><button class="menu" aria-label="Menu">☰</button><nav><a href="#home">Home</a><a href="#about">About</a><a href="#products">Plants</a><a href="#branches">Branches</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><button class="admin-nav" onclick="openAdmin()">Admin</button></nav></header>
+
+<!-- Decorative floating elements -->
+<div class="floating-leaf leaf-a"></div>
+<div class="floating-leaf leaf-b"></div>
+<div class="floating-leaf leaf-c"></div>
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<header class="nav">
+
+    <a class="brand" href="#home">
+
+        <span class="mark">KR</span>
+
+        <span>
+            <b>KR Nurseries</b>
+            <small>Plants • Agriculture • Green Living</small>
+        </span>
+
+    </a>
+
+    <button class="menu" aria-label="Open navigation menu">
+        ☰
+    </button>
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Plants</a>
+        <a href="#branches">Branches</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+
+        <button class="admin-nav" onclick="openAdmin()">
+            Admin
+        </button>
+
+    </nav>
+
+</header>
+
+
 <main id="home">
-<section class="hero"><div class="hero-copy"><span class="eyebrow">KR NURSERIES • ANDHRA PRADESH</span><h1>Grow better.<br><em>Grow green.</em></h1><p>Healthy plants, quality saplings and practical nursery solutions for homes, farms, orchards, landscaping and agricultural projects.</p><div class="actions"><a class="btn primary" href="#products">Explore Plants</a><a class="btn ghost" href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20would%20like%20to%20enquire%20about%20plants." target="_blank" rel="noopener">WhatsApp Us</a></div><div class="trust"><span>🌱 Healthy Saplings</span><span>🚚 Bulk Enquiries</span><span>🤝 Two Branches</span></div></div><div class="hero-art"><div class="sun"></div><div class="hill h1"></div><div class="hill h2"></div><div class="plant"><span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span><span class="stem"></span><div class="pot"></div></div></div></section>
-<section class="strip"><div><strong>01</strong><span>Quality plants</span></div><div><strong>02</strong><span>Farm & garden solutions</span></div><div><strong>03</strong><span>Agricultural & bulk supply</span></div><div><strong>04</strong><span>Delivery across 4 states</span></div></section>
-<section class="delivery-banner">
-  <div><span class="eyebrow">DELIVERY ACROSS SOUTH INDIA</span>
-  <h2>🚚 Delivery Available Across 4 States</h2>
-  <p>Andhra Pradesh • Telangana • Tamil Nadu • Karnataka</p>
-  <strong>🎁 FREE DELIVERY for agricultural products above 3,000 quantity</strong>
-  <small>Bulk agricultural orders are welcome. Delivery terms may vary by product and destination.</small>
-  </div>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-copy">
+
+        <span class="eyebrow">
+            KR NURSERIES • ANDHRA PRADESH
+        </span>
+
+        <h1>
+            Grow better.<br>
+            <em>Grow green.</em>
+        </h1>
+
+        <p>
+            Healthy plants, quality saplings and practical nursery
+            solutions for homes, farms, orchards, landscaping and
+            agricultural projects.
+        </p>
+
+        <div class="actions">
+
+            <a class="btn primary" href="#products">
+                Explore Plants
+            </a>
+
+            <a
+                class="btn ghost"
+                href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20would%20like%20to%20enquire%20about%20plants."
+                target="_blank"
+                rel="noopener"
+            >
+                WhatsApp Us
+            </a>
+
+        </div>
+
+        <div class="trust">
+
+            <span>🌱 Healthy Saplings</span>
+            <span>🚚 Bulk Enquiries</span>
+            <span>🤝 Two Branches</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-art">
+
+        <div class="sun"></div>
+
+        <div class="hill h1"></div>
+        <div class="hill h2"></div>
+
+        <div class="plant">
+
+            <span class="leaf l1"></span>
+            <span class="leaf l2"></span>
+            <span class="leaf l3"></span>
+
+            <span class="stem"></span>
+
+            <div class="pot"></div>
+
+        </div>
+
+    </div>
+
 </section>
-<section id="about" class="section about"><div><span class="eyebrow">ABOUT KR NURSERIES</span><h2>Rooted locally.<br>Growing with purpose.</h2></div><div class="text"><p>KR Nurseries is a dependable destination for quality nursery plants and agricultural planting material. Our focus is simple: healthy plants, honest guidance and reliable service.</p><p>Whether you are establishing a home garden, orchard, farm, landscaping project or agricultural plantation, we help you choose suitable planting material for your requirement.</p></div></section>
-<section id="products" class="section products"><div class="section-head"><div><span class="eyebrow">OUR PLANT RANGE</span><h2>Find the right green.</h2></div><p>Availability can vary by season. Contact the nearest branch for the current nursery list and bulk requirements.</p></div><div class="grid"><article class="card"><div class="icon">🥭</div><h3>Fruit Plants</h3><p>Mango, guava, lemon, pomegranate and other seasonal fruit varieties.</p><a href="#contact">Enquire →</a></article><article class="card"><div class="icon">🌳</div><h3>Timber & Farm Trees</h3><p>Tree saplings suited to farm boundaries, plantations and long-term cultivation.</p><a href="#contact">Enquire →</a></article><article class="card"><div class="icon">🌺</div><h3>Flowering Plants</h3><p>Colourful flowering plants for gardens, homes, institutions and landscaping.</p><a href="#contact">Enquire →</a></article><article class="card"><div class="icon">🪴</div><h3>Garden Plants</h3><p>Ornamental and foliage plants for balconies, terraces, gardens and interiors.</p><a href="#contact">Enquire →</a></article><article class="card"><div class="icon">🌾</div><h3>Agricultural Plants</h3><p>Planting material selected for farms, orchards, plantations and agricultural cultivation.</p><a href="#contact">Enquire →</a></article><article class="card featured"><div class="icon">🚜</div><h3>Bulk Farm Orders</h3><p>Planning a farm, orchard or plantation? Talk to us about quantity and sourcing.</p><a href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20need%20a%20bulk%20plant%20quotation." target="_blank" rel="noopener">Request Quote →</a></article></div></section>
-<section id="branches" class="section branches"><div class="section-head"><div><span class="eyebrow">OUR BRANCHES</span><h2>Visit a KR Nursery near you.</h2></div><p>Choose your nearest branch for directions, direct WhatsApp enquiry and local contact.</p></div><div class="branch-grid">
-<article class="branch-card"><div class="branch-top"><span class="branch-no">01</span><span class="branch-tag">NAYANAPALLE</span></div><h3>KR Nursery Palamaner – Krishnagiri Highway</h3><p class="address">Kutheganipalli Cross, Nayanapalle Village,<br>Santhipuram Mandal, Kuppam Taluk,<br>Chittoor Dist, Andhra Pradesh – 517401</p><div class="manager"><b>T N Naveen Reddy</b><span>Branch Contact</span></div><div class="phone-row"><a href="tel:+918328286323">83282 86323</a><a href="tel:+919704241024">97042 41024</a></div><div class="branch-actions"><a class="btn primary" href="https://wa.me/918328286323?text=Hello%20KR%20Nursery%20Nayanapalle,%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">WhatsApp Enquiry</a><a class="btn ghost" href="https://maps.app.goo.gl/LntgPRCBcq99Zmc17?g_st=awb" target="_blank" rel="noopener">📍 Get Directions</a></div></article>
-<article class="branch-card"><div class="branch-top"><span class="branch-no">02</span><span class="branch-tag">RAGAVAPALLI</span></div><h3>KR Nursery – NH 219</h3><p class="address">Ragavapalli Village, Near Kaigal,<br>Chittoor Dist, Andhra Pradesh – 517415</p><div class="manager"><b>B Kumar Reddy</b><span>Branch Contact</span></div><div class="phone-row"><a href="tel:+918074625223">80746 25223</a></div><div class="branch-actions"><a class="btn primary" href="https://wa.me/918074625223?text=Hello%20KR%20Nursery%20Ragavapalli,%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">WhatsApp Enquiry</a><a class="btn ghost" href="https://maps.app.goo.gl/i98ctGgFZdVtbCnt5?g_st=awb" target="_blank" rel="noopener">📍 Get Directions</a></div></article>
-</div></section>
-<section id="services" class="section services"><div class="service-panel"><span class="eyebrow">WHAT WE CAN HELP WITH</span><h2>From one plant to a complete planting plan.</h2><div class="service-list"><div><b>🌱 Plant selection</b><span>Choose varieties based on purpose, space and season.</span></div><div><b>📦 Bulk supply</b><span>Enquiries for farms, orchards, plantations and landscaping projects.</span></div><div><b>🧑‍🌾 Nursery guidance</b><span>Practical support for planting and early-stage care.</span></div><div><b>🚚 Multi-state delivery</b><span>Delivery available across Andhra Pradesh, Telangana, Tamil Nadu and Karnataka. <strong>Free delivery for agricultural products above 3,000 quantity.</strong></span></div></div></div><div class="quote"><span>“</span><p>Every strong farm and beautiful garden begins with the right planting material.</p><small>KR Nurseries</small></div></section>
-<section id="gallery" class="section gallery"><div class="section-head"><div><span class="eyebrow">KR NURSERIES GALLERY</span><h2>Our green world.</h2></div><p>Photos can be added or updated by the KR Nurseries administrator.</p></div><div class="gallery-slider" aria-label="KR Nurseries photo gallery">
-  <button class="gallery-arrow prev" type="button" aria-label="Previous gallery image" onclick="galleryPrev()">‹</button>
-  <div class="gallery-viewport">
-    <div id="galleryGrid" class="gallery-track"></div>
-  </div>
-  <button class="gallery-arrow next" type="button" aria-label="Next gallery image" onclick="galleryNext()">›</button>
-  <div id="galleryDots" class="gallery-dots" aria-label="Gallery slide controls"></div>
-</div></section>
-<section id="contact" class="section contact"><div class="contact-copy"><span class="eyebrow">CONTACT KR NURSERIES</span><h2>Tell us what you want to grow.</h2><p>Send your requirement and our team can guide you on suitable plants, quantities and availability.</p><div class="contact-items"><a href="tel:+919381661029">📞 93816 61029</a><a href="https://wa.me/919381661029?text=Hello%20KR%20Nurseries,%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">💬 WhatsApp: 93816 61029</a><span>📍 Nayanapalle & Ragavapalli, Andhra Pradesh, India</span></div></div><form id="enquiry"><label>Name<input name="name" required placeholder="Your name"></label><label>Phone<input name="phone" required placeholder="Mobile number"></label><label>Branch<select name="branch"><option value="Nayanapalle — 8328286323">Nayanapalle</option><option value="Ragavapalli — 8074625223">Ragavapalli</option></select></label><label>Requirement<textarea name="message" required placeholder="Plants / quantity / location"></textarea></label><button class="btn primary" type="submit">Send Enquiry on WhatsApp</button><p class="form-note">Your message will open in WhatsApp for sending.</p></form></section>
+
+
+<!-- =====================================================
+     QUICK FEATURES
+     ===================================================== -->
+
+<section class="strip">
+
+    <div>
+        <strong>01</strong>
+        <span>Quality plants</span>
+    </div>
+
+    <div>
+        <strong>02</strong>
+        <span>Farm & garden solutions</span>
+    </div>
+
+    <div>
+        <strong>03</strong>
+        <span>Agricultural & bulk supply</span>
+    </div>
+
+    <div>
+        <strong>04</strong>
+        <span>Delivery across 4 states</span>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DELIVERY
+     ===================================================== -->
+
+<section class="delivery-banner reveal">
+
+    <span class="eyebrow">
+        DELIVERY ACROSS SOUTH INDIA
+    </span>
+
+    <h2>
+        🚚 Delivery Available Across 4 States
+    </h2>
+
+    <p>
+        Andhra Pradesh • Telangana • Tamil Nadu • Karnataka
+    </p>
+
+    <strong>
+        🎁 FREE DELIVERY for agricultural products above 3,000 quantity
+    </strong>
+
+    <small>
+        Bulk agricultural orders are welcome.
+        Delivery terms may vary by product and destination.
+    </small>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
+
+<section id="about" class="section about reveal">
+
+    <div>
+
+        <span class="eyebrow">
+            ABOUT KR NURSERIES
+        </span>
+
+        <h2>
+            Rooted locally.<br>
+            Growing with purpose.
+        </h2>
+
+    </div>
+
+    <div class="text">
+
+        <p>
+            KR Nurseries is a dependable destination for quality
+            nursery plants and agricultural planting material.
+            Our focus is simple: healthy plants, honest guidance
+            and reliable service.
+        </p>
+
+        <p>
+            Whether you are establishing a home garden, orchard,
+            farm, landscaping project or agricultural plantation,
+            we help you choose suitable planting material for
+            your requirement.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PLANTS
+     ===================================================== -->
+
+<section id="products" class="section products reveal">
+
+    <div class="section-head">
+
+        <div>
+
+            <span class="eyebrow">
+                OUR PLANT RANGE
+            </span>
+
+            <h2>
+                Find the right green.
+            </h2>
+
+        </div>
+
+        <p>
+            Availability can vary by season.
+            Contact the nearest branch for current nursery
+            availability and bulk requirements.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <article class="card">
+
+            <div class="icon">🥭</div>
+
+            <h3>
+                Fruit Plants
+            </h3>
+
+            <p>
+                Mango, guava, lemon, pomegranate and
+                other seasonal fruit varieties.
+            </p>
+
+            <a href="#contact">
+                Enquire →
+            </a>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="icon">🌳</div>
+
+            <h3>
+                Timber & Farm Trees
+            </h3>
+
+            <p>
+                Tree saplings suited to farm boundaries,
+                plantations and long-term cultivation.
+            </p>
+
+            <a href="#contact">
+                Enquire →
+            </a>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="icon">🌺</div>
+
+            <h3>
+                Flowering Plants
+            </h3>
+
+            <p>
+                Colourful flowering plants for gardens,
+                homes and landscaping.
+            </p>
+
+            <a href="#contact">
+                Enquire →
+            </a>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="icon">🪴</div>
+
+            <h3>
+                Garden Plants
+            </h3>
+
+            <p>
+                Ornamental and foliage plants for balconies,
+                terraces, gardens and interiors.
+            </p>
+
+            <a href="#contact">
+                Enquire →
+            </a>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="icon">🌾</div>
+
+            <h3>
+                Agricultural Plants
+            </h3>
+
+            <p>
+                Planting material selected for farms,
+                orchards, plantations and agricultural cultivation.
+            </p>
+
+            <a href="#contact">
+                Enquire →
+            </a>
+
+        </article>
+
+
+        <article class="card featured">
+
+            <div class="icon">
+                🚜
+            </div>
+
+            <h3>
+                Bulk Farm Orders
+            </h3>
+
+            <p>
+                Planning a farm, orchard or plantation?
+                Talk to us about quantity and sourcing.
+            </p>
+
+            <a
+                href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20need%20a%20bulk%20plant%20quotation."
+                target="_blank"
+                rel="noopener"
+            >
+                Request Quote →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BRANCHES
+     ===================================================== -->
+
+<section id="branches" class="section branches reveal">
+
+    <div class="section-head">
+
+        <div>
+
+            <span class="eyebrow">
+                OUR BRANCHES
+            </span>
+
+            <h2>
+                Visit a KR Nursery near you.
+            </h2>
+
+        </div>
+
+        <p>
+            Choose your nearest branch for directions,
+            direct WhatsApp enquiry and local contact.
+        </p>
+
+    </div>
+
+
+    <div class="branch-grid">
+
+        <!-- NAYANAPALLE -->
+
+        <article class="branch-card">
+
+            <div class="branch-top">
+
+                <span class="branch-no">
+                    01
+                </span>
+
+                <span class="branch-tag">
+                    NAYANAPALLE
+                </span>
+
+            </div>
+
+            <h3>
+                KR Nursery Palamaner – Krishnagiri Highway
+            </h3>
+
+            <p class="address">
+                Kutheganipalli Cross,
+                Nayanapalle Village,<br>
+                Santhipuram Mandal,
+                Kuppam Taluk,<br>
+                Chittoor Dist,
+                Andhra Pradesh – 517401
+            </p>
+
+            <div class="manager">
+
+                <b>
+                    T N Naveen Reddy
+                </b>
+
+                <span>
+                    Branch Contact
+                </span>
+
+            </div>
+
+            <div class="phone-row">
+
+                <a href="tel:+918328286323">
+                    83282 86323
+                </a>
+
+                <a href="tel:+919704241024">
+                    97042 41024
+                </a>
+
+            </div>
+
+            <div class="branch-actions">
+
+                <a
+                    class="btn primary"
+                    href="https://wa.me/918328286323?text=Hello%20KR%20Nursery%20Nayanapalle,%20I%20would%20like%20to%20make%20an%20enquiry."
+                    target="_blank"
+                    rel="noopener"
+                >
+                    WhatsApp Enquiry
+                </a>
+
+                <a
+                    class="btn ghost"
+                    href="https://maps.app.goo.gl/LntgPRCBcq99Zmc17?g_st=awb"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    📍 Get Directions
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- RAGAVAPALLI -->
+
+        <article class="branch-card">
+
+            <div class="branch-top">
+
+                <span class="branch-no">
+                    02
+                </span>
+
+                <span class="branch-tag">
+                    RAGAVAPALLI
+                </span>
+
+            </div>
+
+            <h3>
+                KR Nursery – NH 219
+            </h3>
+
+            <p class="address">
+                Ragavapalli Village,
+                Near Kaigal,<br>
+                Chittoor Dist,
+                Andhra Pradesh – 517415
+            </p>
+
+            <div class="manager">
+
+                <b>
+                    B Kumar Reddy
+                </b>
+
+                <span>
+                    Branch Contact
+                </span>
+
+            </div>
+
+            <div class="phone-row">
+
+                <a href="tel:+918074625223">
+                    80746 25223
+                </a>
+
+            </div>
+
+            <div class="branch-actions">
+
+                <a
+                    class="btn primary"
+                    href="https://wa.me/918074625223?text=Hello%20KR%20Nursery%20Ragavapalli,%20I%20would%20like%20to%20make%20an%20enquiry."
+                    target="_blank"
+                    rel="noopener"
+                >
+                    WhatsApp Enquiry
+                </a>
+
+                <a
+                    class="btn ghost"
+                    href="https://maps.app.goo.gl/i98ctGgFZdVtbCnt5?g_st=awb"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    📍 Get Directions
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+     ===================================================== -->
+
+<section id="services" class="section services reveal">
+
+    <div class="service-panel">
+
+        <span class="eyebrow">
+            WHAT WE CAN HELP WITH
+        </span>
+
+        <h2>
+            From one plant to a complete planting plan.
+        </h2>
+
+
+        <div class="service-list">
+
+            <div>
+
+                <b>
+                    🌱 Plant selection
+                </b>
+
+                <span>
+                    Choose varieties based on purpose,
+                    space and season.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <b>
+                    📦 Bulk supply
+                </b>
+
+                <span>
+                    Enquiries for farms, orchards,
+                    plantations and landscaping projects.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <b>
+                    🧑‍🌾 Nursery guidance
+                </b>
+
+                <span>
+                    Practical support for planting
+                    and early-stage care.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <b>
+                    🚚 Multi-state delivery
+                </b>
+
+                <span>
+                    Delivery available across Andhra Pradesh,
+                    Telangana, Tamil Nadu and Karnataka.
+                    <strong>
+                        Free delivery for agricultural products
+                        above 3,000 quantity.
+                    </strong>
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quote">
+
+        <span>
+            “
+        </span>
+
+        <p>
+            Every strong farm and beautiful garden begins
+            with the right planting material.
+        </p>
+
+        <small>
+            KR Nurseries
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+
+<section id="gallery" class="section gallery reveal">
+
+    <div class="section-head">
+
+        <div>
+
+            <span class="eyebrow">
+                KR NURSERIES GALLERY
+            </span>
+
+            <h2>
+                Our green world.
+            </h2>
+
+        </div>
+
+        <p>
+            Photos can be added or updated by the
+            KR Nurseries administrator.
+        </p>
+
+    </div>
+
+
+    <div
+        class="gallery-slider"
+        aria-label="KR Nurseries photo gallery"
+    >
+
+        <button
+            class="gallery-arrow prev"
+            type="button"
+            aria-label="Previous gallery image"
+            onclick="galleryPrev()"
+        >
+            ‹
+        </button>
+
+
+        <div class="gallery-viewport">
+
+            <div
+                id="galleryGrid"
+                class="gallery-track"
+            ></div>
+
+        </div>
+
+
+        <button
+            class="gallery-arrow next"
+            type="button"
+            aria-label="Next gallery image"
+            onclick="galleryNext()"
+        >
+            ›
+        </button>
+
+
+        <div
+            id="galleryDots"
+            class="gallery-dots"
+            aria-label="Gallery slide controls"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
+
+<section id="contact" class="section contact reveal">
+
+    <div class="contact-copy">
+
+        <span class="eyebrow">
+            CONTACT KR NURSERIES
+        </span>
+
+        <h2>
+            Tell us what you want to grow.
+        </h2>
+
+        <p>
+            Send your requirement and our team can guide
+            you on suitable plants, quantities and availability.
+        </p>
+
+
+        <div class="contact-items">
+
+            <a href="tel:+918328286323">
+                📞 83282 86323
+            </a>
+
+            <a
+                href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20would%20like%20to%20make%20an%20enquiry."
+                target="_blank"
+                rel="noopener"
+            >
+                💬 WhatsApp: 83282 86323
+            </a>
+
+            <span>
+                📍 Nayanapalle & Ragavapalli,
+                Andhra Pradesh, India
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <form id="enquiry">
+
+        <label>
+            Name
+
+            <input
+                name="name"
+                required
+                placeholder="Your name"
+            >
+
+        </label>
+
+
+        <label>
+            Phone
+
+            <input
+                name="phone"
+                required
+                placeholder="Mobile number"
+            >
+
+        </label>
+
+
+        <label>
+            Branch
+
+            <select name="branch">
+
+                <option value="Nayanapalle — 8328286323">
+                    Nayanapalle
+                </option>
+
+                <option value="Ragavapalli — 8074625223">
+                    Ragavapalli
+                </option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+            Requirement
+
+            <textarea
+                name="message"
+                required
+                placeholder="Plants / quantity / location"
+            ></textarea>
+
+        </label>
+
+
+        <button
+            class="btn primary"
+            type="submit"
+        >
+            Send Enquiry on WhatsApp
+        </button>
+
+        <p class="form-note">
+            Your message will open in WhatsApp for sending.
+        </p>
+
+    </form>
+
+</section>
+
 </main>
-<footer><div><b>KR Nurseries</b><p>Plants • Agriculture • Green Living</p></div><div><span>© <span id="year"></span> KR Nurseries. All rights reserved.</span></div></footer>
-<div id="adminModal" class="modal" aria-hidden="true"><div class="modal-card"><button class="close" onclick="closeAdmin()">×</button><div id="adminLogin"><span class="eyebrow">ADMIN ACCESS</span><h2>KR Nurseries Admin</h2><p>Sign in to manage the KR Nurseries gallery.</p><form id="adminLoginForm"><input id="adminPhone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" required><button class="btn primary" type="submit">Login</button><div id="loginError" class="error"></div></form></div><div id="adminPanel" hidden><span class="eyebrow">ADMIN PANEL</span><h2>Gallery Manager</h2><p>Upload a nursery photo directly from your device. It will appear immediately in this browser.</p><form id="galleryForm"><input id="galleryTitle" placeholder="Photo title" required><label class="file-upload"><span>Choose Image</span><input id="galleryFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required></label><div id="galleryPreview" class="upload-preview" hidden><img id="galleryPreviewImg" alt="Selected image preview"><span id="galleryFileName"></span></div><small class="form-note">JPG, PNG, WEBP or GIF • Maximum 5 MB</small><button class="btn primary" type="submit">Upload to Gallery</button></form><div id="adminGalleryList"></div><button class="btn ghost logout" onclick="adminLogout()">Logout</button></div></div></div>
-<script src="script.js"></script></body></html>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div>
+
+        <b>
+            KR Nurseries
+        </b>
+
+        <p>
+            Plants • Agriculture • Green Living
+        </p>
+
+    </div>
+
+    <div>
+
+        <span>
+            © <span id="year"></span>
+            KR Nurseries.
+            All rights reserved.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     ADMIN MODAL
+     ===================================================== -->
+
+<div
+    id="adminModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-card">
+
+        <button
+            class="close"
+            onclick="closeAdmin()"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <!-- ADMIN LOGIN -->
+
+        <div id="adminLogin">
+
+            <span class="eyebrow">
+                ADMIN ACCESS
+            </span>
+
+            <h2>
+                KR Nurseries Admin
+            </h2>
+
+            <p>
+                Sign in to manage the KR Nurseries gallery.
+            </p>
+
+
+            <form id="adminLoginForm">
+
+                <input
+                    id="adminPhone"
+                    inputmode="numeric"
+                    maxlength="10"
+                    placeholder="10-digit mobile number"
+                    required
+                >
+
+                <button
+                    class="btn primary"
+                    type="submit"
+                >
+                    Login
+                </button>
+
+                <div
+                    id="loginError"
+                    class="error"
+                ></div>
+
+            </form>
+
+        </div>
+
+
+        <!-- ADMIN PANEL -->
+
+        <div id="adminPanel" hidden>
+
+            <span class="eyebrow">
+                ADMIN PANEL
+            </span>
+
+            <h2>
+                Gallery Manager
+            </h2>
+
+            <p>
+                Upload a nursery photo directly from your device.
+                It will appear immediately in this browser.
+            </p>
+
+
+            <form id="galleryForm">
+
+                <input
+                    id="galleryTitle"
+                    placeholder="Photo title"
+                    required
+                >
+
+
+                <label class="file-upload">
+
+                    <span>
+                        Choose Image
+                    </span>
+
+                    <input
+                        id="galleryFile"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/gif"
+                        required
+                    >
+
+                </label>
+
+
+                <div
+                    id="galleryPreview"
+                    class="upload-preview"
+                    hidden
+                >
+
+                    <img
+                        id="galleryPreviewImg"
+                        alt="Selected image preview"
+                    >
+
+                    <span id="galleryFileName"></span>
+
+                </div>
+
+
+                <small class="form-note">
+                    JPG, PNG, WEBP or GIF • Maximum 5 MB
+                </small>
+
+
+                <button
+                    class="btn primary"
+                    type="submit"
+                >
+                    Upload to Gallery
+                </button>
+
+            </form>
+
+
+            <div id="adminGalleryList"></div>
+
+
+            <button
+                class="btn ghost logout"
+                onclick="adminLogout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Existing KR Nurseries functionality -->
+<script src="script.js"></script>
+
+
+<!-- Premium scroll animation -->
+<script>
+
+(function(){
+
+    const revealItems =
+        document.querySelectorAll('.reveal');
+
+    if(!('IntersectionObserver' in window)){
+
+        revealItems.forEach(function(item){
+            item.classList.add('visible');
+        });
+
+        return;
+    }
+
+    const observer =
+        new IntersectionObserver(
+            function(entries){
+
+                entries.forEach(function(entry){
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add('visible');
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold:.12,
+                rootMargin:'0px 0px -50px 0px'
+            }
+        );
+
+    revealItems.forEach(function(item){
+        observer.observe(item);
+    });
+
+})();
+
+</script>
+
+</body>
+</html>
