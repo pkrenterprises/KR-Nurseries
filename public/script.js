@@ -1,1897 +1,950 @@
-/* =========================================================
-   KR NURSERIES
-   ADMIN + GALLERY + AUTO SLIDER
-   PKR ENTERPRISES
-========================================================= */
-
-"use strict";
-
-
-/* =========================================================
-   ADMIN AUTHENTICATION
-========================================================= */
-
-/*
-   IMPORTANT:
-   This number is intentionally NOT displayed in index.html.
-
-   It is used only by the browser-side admin login.
-
-   For true secure authentication, move this to a
-   Cloudflare Worker/backend later.
-*/
-
-const ADMIN_NUMBERS = [
-  "9381661029"
-];
-
-const ADMIN_SESSION_KEY = "kr_nurseries_admin_logged_in";
-
-
-
-/* =========================================================
-   GALLERY STORAGE
-========================================================= */
-
-const GALLERY_STORAGE_KEY = "kr_nurseries_gallery_v3";
-
-
-
-/* =========================================================
-   DEFAULT GALLERY
-========================================================= */
+const ADMIN_NUMBERS = ['KRNursery1611'];
 
 const DEFAULT_GALLERY = [
   {
-    id: "default-1",
-    title: "Agricultural Plants",
-    image: "",
-    emoji: "🌱",
-    default: true
+    title: 'Fresh Nursery Plants',
+    url: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=80'
   },
-
   {
-    id: "default-2",
-    title: "Nursery Plants",
-    image: "",
-    emoji: "🌿",
-    default: true
+    title: 'Healthy Green Saplings',
+    url: 'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=80'
   },
-
   {
-    id: "default-3",
-    title: "Plantation Plants",
-    image: "",
-    emoji: "🌳",
-    default: true
+    title: 'Fruit & Farm Plants',
+    url: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80'
   },
-
   {
-    id: "default-4",
-    title: "Bulk Plant Supply",
-    image: "",
-    emoji: "🌾",
-    default: true
+    title: 'Garden Collection',
+    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    title: 'Grow Green',
+    url: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    title: 'Nursery Life',
+    url: 'https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1000&q=80'
   }
 ];
 
+document.addEventListener('DOMContentLoaded', () => {
 
-
-/* =========================================================
-   DOM READY
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  setCurrentYear();
-
-  initializeAdmin();
-
-  initializeGallery();
-
-  initializeEnquiryForm();
-
-  initializeGalleryControls();
-
-});
-
-
-
-/* =========================================================
-   CURRENT YEAR
-========================================================= */
-
-function setCurrentYear() {
-
-  const yearElement = document.getElementById("currentYear");
-
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-}
-
-
-
-/* =========================================================
-   ADMIN
-========================================================= */
-
-function initializeAdmin() {
-
-  const loginForm =
-    document.getElementById("adminLoginForm");
-
-  if (loginForm) {
-
-    loginForm.addEventListener(
-      "submit",
-      function (event) {
-
-        event.preventDefault();
-
-        adminLogin();
-
-      }
-    );
-
+  /* =========================
+     YEAR
+  ========================= */
+  const year = document.getElementById('year');
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 
 
-  const galleryForm =
-    document.getElementById("galleryForm");
+  /* =========================
+     MOBILE MENU
+  ========================= */
+  const menu = document.querySelector('.menu');
 
-  if (galleryForm) {
+  if (menu) {
+    menu.addEventListener('click', () => {
+      const nav = document.querySelector('.nav nav');
 
-    galleryForm.addEventListener(
-      "submit",
-      function (event) {
+      if (!nav) return;
 
-        event.preventDefault();
+      nav.style.display =
+        nav.style.display === 'flex' ? 'none' : 'flex';
 
-        uploadGalleryImage();
-
-      }
-    );
-
+      nav.style.position = 'absolute';
+      nav.style.top = '78px';
+      nav.style.right = '6%';
+      nav.style.flexDirection = 'column';
+      nav.style.background = '#fbfcf8';
+      nav.style.padding = '20px';
+      nav.style.border = '1px solid #e8ede5';
+      nav.style.borderRadius = '12px';
+      nav.style.zIndex = '9999';
+    });
   }
 
 
-  const galleryFile =
-    document.getElementById("galleryFile");
+  /* =========================
+     ENQUIRY FORM
+  ========================= */
+  const enquiryForm =
+    document.getElementById('enquiryForm') ||
+    document.getElementById('enquiry');
 
-  if (galleryFile) {
+  if (enquiryForm) {
 
-    galleryFile.addEventListener(
-      "change",
-      previewGalleryImage
-    );
+    enquiryForm.addEventListener('submit', e => {
 
+      e.preventDefault();
+
+      const form = new FormData(e.target);
+
+      const branch = form.get('branch') || '';
+
+      const target =
+        branch.startsWith('Ragavapalli')
+          ? '8074625223'
+          : '8328286323';
+
+      const msg =
+        `Hello KR Nurseries,
+
+I am ${form.get('name') || ''}.
+
+Phone: ${form.get('phone') || ''}
+
+Branch: ${branch}
+
+Requirement:
+${form.get('message') || ''}`;
+
+      window.open(
+        'https://wa.me/91' +
+        target +
+        '?text=' +
+        encodeURIComponent(msg),
+        '_blank'
+      );
+    });
   }
 
 
-  if (
-    sessionStorage.getItem(
-      ADMIN_SESSION_KEY
-    ) === "true"
-  ) {
+  /* =========================
+     ADMIN MODAL
+  ========================= */
+  window.openAdmin = function () {
 
-    showAdminPanel();
+    const modal = document.getElementById('adminModal');
 
-  }
+    if (!modal) return;
 
-}
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
 
-
-
-/* =========================================================
-   OPEN ADMIN
-========================================================= */
-
-function openAdmin() {
-
-  const modal =
-    document.getElementById("adminModal");
-
-  if (!modal) return;
-
-  modal.classList.add("active");
-
-  modal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+    renderAdmin();
+  };
 
 
-  const loggedIn =
-    sessionStorage.getItem(
-      ADMIN_SESSION_KEY
-    ) === "true";
+  window.closeAdmin = function () {
+
+    const modal = document.getElementById('adminModal');
+
+    if (!modal) return;
+
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+  };
 
 
-  if (loggedIn) {
+  window.addEventListener('click', e => {
 
-    showAdminPanel();
-
-  } else {
-
-    showAdminLogin();
-
-  }
-
-}
-
-
-
-/* =========================================================
-   CLOSE ADMIN
-========================================================= */
-
-function closeAdmin() {
-
-  const modal =
-    document.getElementById("adminModal");
-
-  if (!modal) return;
-
-  modal.classList.remove("active");
-
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-}
-
-
-
-/* =========================================================
-   ADMIN LOGIN
-========================================================= */
-
-function adminLogin() {
-
-  const input =
-    document.getElementById("adminPhone");
-
-  const error =
-    document.getElementById("loginError");
-
-  if (!input) return;
-
-
-  const entered =
-    input.value
-      .replace(/\D/g, "")
-      .trim();
-
-
-  const valid =
-    ADMIN_NUMBERS.includes(entered);
-
-
-  if (!valid) {
-
-    if (error) {
-
-      error.textContent =
-        "Invalid admin number.";
-
-      error.style.display =
-        "block";
-
+    if (e.target && e.target.id === 'adminModal') {
+      window.closeAdmin();
     }
 
-    input.focus();
+  });
 
-    return;
 
+  /* =========================
+     ADMIN LOGIN
+  ========================= */
+  const adminLoginForm =
+    document.getElementById('adminLoginForm');
+
+  if (adminLoginForm) {
+
+    adminLoginForm.addEventListener('submit', e => {
+
+      e.preventDefault();
+
+      const input =
+        document.getElementById('adminPhone');
+
+      const error =
+        document.getElementById('loginError');
+
+      if (!input) return;
+
+      const phone =
+        input.value.replace(/\D/g, '');
+
+      if (ADMIN_NUMBERS.includes(phone)) {
+
+        sessionStorage.setItem(
+          'krAdmin',
+          'true'
+        );
+
+        if (error) {
+          error.textContent = '';
+        }
+
+        renderAdmin();
+
+      } else {
+
+        if (error) {
+          error.textContent =
+            'This number is not authorised.';
+        }
+
+      }
+
+    });
   }
 
 
-  sessionStorage.setItem(
-    ADMIN_SESSION_KEY,
-    "true"
-  );
+  /* =========================
+     GALLERY STORAGE
+  ========================= */
+  function getGallery() {
 
+    try {
 
-  if (error) {
+      const stored =
+        localStorage.getItem('krGallery');
 
-    error.style.display =
-      "none";
+      if (!stored) {
+        return DEFAULT_GALLERY;
+      }
 
-  }
+      const gallery =
+        JSON.parse(stored);
 
+      if (!Array.isArray(gallery) || gallery.length === 0) {
+        return DEFAULT_GALLERY;
+      }
 
-  input.value = "";
+      return gallery;
 
-  showAdminPanel();
+    } catch (error) {
 
-}
-
-
-
-/* =========================================================
-   SHOW LOGIN
-========================================================= */
-
-function showAdminLogin() {
-
-  const login =
-    document.getElementById("adminLogin");
-
-  const panel =
-    document.getElementById("adminPanel");
-
-
-  if (login) {
-    login.style.display = "block";
-  }
-
-
-  if (panel) {
-    panel.style.display = "none";
-  }
-
-}
-
-
-
-/* =========================================================
-   SHOW ADMIN PANEL
-========================================================= */
-
-function showAdminPanel() {
-
-  const login =
-    document.getElementById("adminLogin");
-
-  const panel =
-    document.getElementById("adminPanel");
-
-
-  if (login) {
-    login.style.display = "none";
-  }
-
-
-  if (panel) {
-    panel.style.display = "block";
-  }
-
-
-  renderAdminGallery();
-
-}
-
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-function adminLogout() {
-
-  sessionStorage.removeItem(
-    ADMIN_SESSION_KEY
-  );
-
-
-  showAdminLogin();
-
-}
-
-
-
-/* =========================================================
-   GET GALLERY
-========================================================= */
-
-function getGallery() {
-
-  try {
-
-    const saved =
-      localStorage.getItem(
-        GALLERY_STORAGE_KEY
+      console.error(
+        'Gallery storage error:',
+        error
       );
 
-
-    if (!saved) {
-
-      return [
-        ...DEFAULT_GALLERY
-      ];
-
+      return DEFAULT_GALLERY;
     }
-
-
-    const parsed =
-      JSON.parse(saved);
-
-
-    if (
-      !Array.isArray(parsed) ||
-      parsed.length === 0
-    ) {
-
-      return [
-        ...DEFAULT_GALLERY
-      ];
-
-    }
-
-
-    return parsed;
-
-  } catch (error) {
-
-    console.error(
-      "Gallery read error:",
-      error
-    );
-
-
-    return [
-      ...DEFAULT_GALLERY
-    ];
-
   }
 
-}
 
-
-
-/* =========================================================
-   SAVE GALLERY
-========================================================= */
-
-function saveGallery(gallery) {
-
-  try {
+  function saveGallery(gallery) {
 
     localStorage.setItem(
-      GALLERY_STORAGE_KEY,
+      'krGallery',
       JSON.stringify(gallery)
     );
 
-    return true;
-
-  } catch (error) {
-
-    console.error(
-      "Gallery save error:",
-      error
-    );
-
-    alert(
-      "The image could not be saved. The browser storage may be full. Please use a smaller image."
-    );
-
-    return false;
-
-  }
-
-}
-
-
-
-/* =========================================================
-   INITIALIZE GALLERY
-========================================================= */
-
-function initializeGallery() {
-
-  renderGallery();
-
-  startGalleryAutoSlide();
-
-}
-
-
-
-/* =========================================================
-   RENDER PUBLIC GALLERY
-========================================================= */
-
-function renderGallery() {
-
-  const galleryElement =
-    document.getElementById("galleryGrid");
-
-  if (!galleryElement) return;
-
-
-  const gallery =
-    getGallery();
-
-
-  galleryElement.innerHTML = "";
-
-
-  if (gallery.length === 0) {
-
-    galleryElement.innerHTML = `
-      <div class="empty-gallery">
-        No gallery images available.
-      </div>
-    `;
-
-    return;
-
+    renderGallery();
+    renderAdminList();
   }
 
 
-  gallery.forEach(function (item) {
+  /* =========================
+     GALLERY SLIDER
+  ========================= */
+  let galleryIndex = 0;
+  let galleryTimer = null;
 
-    const card =
-      document.createElement("div");
-
-    card.className =
-      "gallery-item";
+  let galleryTouchStartX = 0;
+  let galleryTouchDeltaX = 0;
 
 
-    if (item.image) {
+  function galleryVisibleCount() {
 
-      const image =
-        document.createElement("img");
+    if (window.innerWidth <= 620) {
+      return 1;
+    }
 
-      image.src =
-        item.image;
+    if (window.innerWidth <= 980) {
+      return 2;
+    }
 
-      image.alt =
-        item.title || "KR Nurseries";
+    return 3;
+  }
 
-      image.loading =
-        "lazy";
 
-      card.appendChild(
-        image
+  function renderGallery() {
+
+    const grid =
+      document.getElementById('galleryGrid');
+
+    if (!grid) {
+      console.error(
+        'galleryGrid element was not found.'
       );
+      return;
+    }
 
-    } else {
+    const dots =
+      document.getElementById('galleryDots');
 
-      const placeholder =
-        document.createElement("div");
+    const items =
+      getGallery();
 
-      placeholder.className =
-        "gallery-placeholder";
+    if (!items.length) {
 
-      placeholder.textContent =
-        item.emoji || "🌱";
+      grid.innerHTML = `
+        <div style="
+          padding:30px;
+          text-align:center;
+          color:#666;
+          width:100%;
+        ">
+          No gallery images available.
+        </div>
+      `;
 
-      card.appendChild(
-        placeholder
-      );
-
+      return;
     }
 
 
-    const caption =
-      document.createElement("div");
+    grid.innerHTML = items.map((item, index) => {
 
-    caption.className =
-      "gallery-caption";
+      return `
+        <article class="gallery-item">
 
-    caption.textContent =
-      item.title || "KR Nurseries";
+          <img
+            src="${escapeAttr(item.url)}"
+            alt="${escapeAttr(item.title)}"
+            loading="lazy"
+            onerror="this.parentElement.classList.add('broken')"
+          >
 
+          <div>
+            <span>
+              ${String(index + 1).padStart(2, '0')}
+            </span>
 
-    card.appendChild(
-      caption
-    );
+            <b>
+              ${escapeHtml(item.title)}
+            </b>
+          </div>
 
+        </article>
+      `;
 
-    galleryElement.appendChild(
-      card
-    );
-
-  });
-
-
-  /*
-     Always return slider to first position
-     after gallery changes.
-  */
-
-  galleryElement.scrollLeft = 0;
-
-}
+    }).join('');
 
 
-
-/* =========================================================
-   ADMIN GALLERY LIST
-========================================================= */
-
-function renderAdminGallery() {
-
-  const list =
-    document.getElementById(
-      "adminGalleryList"
-    );
-
-  if (!list) return;
-
-
-  const gallery =
-    getGallery();
-
-
-  list.innerHTML = "";
-
-
-  gallery.forEach(function (item) {
-
-    const row =
-      document.createElement("div");
-
-    row.className =
-      "admin-gallery-item";
-
-
-    if (item.image) {
-
-      const image =
-        document.createElement("img");
-
-      image.src =
-        item.image;
-
-      image.alt =
-        item.title || "";
-
-      row.appendChild(
-        image
+    const maxIndex =
+      Math.max(
+        0,
+        items.length - galleryVisibleCount()
       );
 
-    } else {
+    galleryIndex =
+      Math.min(galleryIndex, maxIndex);
 
-      const placeholder =
-        document.createElement("div");
 
-      placeholder.style.width =
-        "70px";
+    if (dots) {
 
-      placeholder.style.height =
-        "55px";
+      dots.innerHTML = items.map((_, index) => {
 
-      placeholder.style.borderRadius =
-        "10px";
+        return `
+          <button
+            type="button"
+            aria-label="Go to gallery image ${index + 1}"
+            class="${index === galleryIndex ? 'active' : ''}"
+            onclick="galleryGo(${index})"
+          ></button>
+        `;
 
-      placeholder.style.display =
-        "grid";
-
-      placeholder.style.placeItems =
-        "center";
-
-      placeholder.style.background =
-        "#e6f4e7";
-
-      placeholder.style.fontSize =
-        "25px";
-
-      placeholder.textContent =
-        item.emoji || "🌱";
-
-      row.appendChild(
-        placeholder
-      );
-
+      }).join('');
     }
 
 
-    const info =
-      document.createElement("div");
+    updateGalleryPosition();
 
-    info.className =
-      "admin-gallery-info";
+    startGalleryAutoSlide();
 
-
-    const title =
-      document.createElement("strong");
-
-    title.textContent =
-      item.title || "Untitled";
+    bindGalleryTouch();
+  }
 
 
-    const type =
-      document.createElement("small");
+  function updateGalleryPosition() {
 
-    type.textContent =
-      item.default
-        ? "Default gallery image"
-        : "Uploaded image";
+    const track =
+      document.getElementById('galleryGrid');
 
+    const items =
+      getGallery();
 
-    info.appendChild(title);
+    if (!track || !items.length) {
+      return;
+    }
 
-    info.appendChild(type);
+    const count =
+      galleryVisibleCount();
 
+    const max =
+      Math.max(
+        0,
+        items.length - count
+      );
 
-    row.appendChild(info);
-
-
-    /*
-       Default placeholder images can also
-       be removed if the admin wants.
-    */
-
-    const deleteButton =
-      document.createElement("button");
-
-    deleteButton.type =
-      "button";
-
-    deleteButton.className =
-      "delete-btn";
-
-    deleteButton.textContent =
-      "Delete";
+    galleryIndex =
+      Math.min(galleryIndex, max);
 
 
-    deleteButton.addEventListener(
-      "click",
-      function () {
+    const percentage =
+      galleryIndex * (100 / count);
 
-        deleteGalleryImage(
-          item.id
+    const gap =
+      galleryIndex * (16 / count);
+
+
+    track.style.transform =
+      `translateX(calc(-${percentage}% - ${gap}px))`;
+
+
+    document
+      .querySelectorAll('#galleryDots button')
+      .forEach((button, index) => {
+
+        button.classList.toggle(
+          'active',
+          index === galleryIndex
         );
+
+      });
+  }
+
+
+  window.galleryNext = function () {
+
+    const items =
+      getGallery();
+
+    if (items.length <= 1) {
+      return;
+    }
+
+    const max =
+      Math.max(
+        0,
+        items.length - galleryVisibleCount()
+      );
+
+    galleryIndex =
+      galleryIndex >= max
+        ? 0
+        : galleryIndex + 1;
+
+    updateGalleryPosition();
+  };
+
+
+  window.galleryPrev = function () {
+
+    const items =
+      getGallery();
+
+    if (items.length <= 1) {
+      return;
+    }
+
+    const max =
+      Math.max(
+        0,
+        items.length - galleryVisibleCount()
+      );
+
+    galleryIndex =
+      galleryIndex <= 0
+        ? max
+        : galleryIndex - 1;
+
+    updateGalleryPosition();
+  };
+
+
+  window.galleryGo = function (index) {
+
+    galleryIndex = index;
+
+    updateGalleryPosition();
+
+    startGalleryAutoSlide();
+  };
+
+
+  function startGalleryAutoSlide() {
+
+    clearInterval(galleryTimer);
+
+    const items =
+      getGallery();
+
+    if (
+      items.length >
+      galleryVisibleCount()
+    ) {
+
+      galleryTimer =
+        setInterval(() => {
+
+          window.galleryNext();
+
+        }, 4000);
+
+    }
+  }
+
+
+  /* =========================
+     TOUCH / SWIPE
+  ========================= */
+  function bindGalleryTouch() {
+
+    const viewport =
+      document.querySelector(
+        '.gallery-viewport'
+      );
+
+    if (
+      !viewport ||
+      viewport.dataset.touchBound
+    ) {
+      return;
+    }
+
+    viewport.dataset.touchBound = '1';
+
+
+    viewport.addEventListener(
+      'touchstart',
+      e => {
+
+        if (
+          e.touches &&
+          e.touches[0]
+        ) {
+
+          galleryTouchStartX =
+            e.touches[0].clientX;
+
+          galleryTouchDeltaX = 0;
+
+          clearInterval(galleryTimer);
+        }
+
+      },
+      { passive: true }
+    );
+
+
+    viewport.addEventListener(
+      'touchmove',
+      e => {
+
+        if (
+          e.touches &&
+          e.touches[0]
+        ) {
+
+          galleryTouchDeltaX =
+            e.touches[0].clientX -
+            galleryTouchStartX;
+        }
+
+      },
+      { passive: true }
+    );
+
+
+    viewport.addEventListener(
+      'touchend',
+      () => {
+
+        if (
+          Math.abs(galleryTouchDeltaX) > 45
+        ) {
+
+          if (galleryTouchDeltaX < 0) {
+            window.galleryNext();
+          } else {
+            window.galleryPrev();
+          }
+
+        }
+
+        startGalleryAutoSlide();
 
       }
     );
-
-
-    row.appendChild(
-      deleteButton
-    );
-
-
-    list.appendChild(
-      row
-    );
-
-  });
-
-}
-
-
-
-/* =========================================================
-   PREVIEW IMAGE
-========================================================= */
-
-function previewGalleryImage() {
-
-  const fileInput =
-    document.getElementById(
-      "galleryFile"
-    );
-
-  const preview =
-    document.getElementById(
-      "galleryPreviewImg"
-    );
-
-  const fileName =
-    document.getElementById(
-      "galleryFileName"
-    );
-
-
-  if (
-    !fileInput ||
-    !fileInput.files ||
-    !fileInput.files[0]
-  ) {
-
-    if (preview) {
-      preview.style.display =
-        "none";
-    }
-
-    return;
-
   }
 
 
-  const file =
-    fileInput.files[0];
+  window.addEventListener(
+    'resize',
+    () => {
 
+      updateGalleryPosition();
 
-  if (fileName) {
-
-    fileName.textContent =
-      file.name;
-
-  }
-
-
-  const reader =
-    new FileReader();
-
-
-  reader.onload =
-    function (event) {
-
-      if (!preview) return;
-
-      preview.src =
-        event.target.result;
-
-      preview.style.display =
-        "block";
-
-    };
-
-
-  reader.readAsDataURL(
-    file
-  );
-
-}
-
-
-
-/* =========================================================
-   IMAGE COMPRESSION
-========================================================= */
-
-/*
-   Compresses uploaded images before storing them.
-
-   This helps prevent localStorage from filling too quickly.
-*/
-
-function compressImage(
-  file,
-  maxWidth = 1400,
-  quality = 0.82
-) {
-
-  return new Promise(
-    function (resolve, reject) {
-
-      const reader =
-        new FileReader();
-
-
-      reader.onload =
-        function (event) {
-
-          const image =
-            new Image();
-
-
-          image.onload =
-            function () {
-
-              let width =
-                image.width;
-
-              let height =
-                image.height;
-
-
-              if (width > maxWidth) {
-
-                height =
-                  Math.round(
-                    height *
-                    (maxWidth / width)
-                  );
-
-                width =
-                  maxWidth;
-
-              }
-
-
-              const canvas =
-                document.createElement(
-                  "canvas"
-                );
-
-
-              canvas.width =
-                width;
-
-              canvas.height =
-                height;
-
-
-              const context =
-                canvas.getContext(
-                  "2d"
-                );
-
-
-              context.drawImage(
-                image,
-                0,
-                0,
-                width,
-                height
-              );
-
-
-              const compressed =
-                canvas.toDataURL(
-                  "image/jpeg",
-                  quality
-                );
-
-
-              resolve(
-                compressed
-              );
-
-            };
-
-
-          image.onerror =
-            function () {
-
-              reject(
-                new Error(
-                  "Could not process image."
-                )
-              );
-
-            };
-
-
-          image.src =
-            event.target.result;
-
-        };
-
-
-      reader.onerror =
-        function () {
-
-          reject(
-            new Error(
-              "Could not read image."
-            )
-          );
-
-        };
-
-
-      reader.readAsDataURL(
-        file
-      );
+      startGalleryAutoSlide();
 
     }
   );
 
-}
+
+  /* =========================
+     ADMIN PANEL
+  ========================= */
+  function renderAdmin() {
+
+    const logged =
+      sessionStorage.getItem('krAdmin') === 'true';
 
 
+    const login =
+      document.getElementById('adminLogin');
 
-/* =========================================================
-   UPLOAD GALLERY IMAGE
-========================================================= */
-
-async function uploadGalleryImage() {
-
-  const titleInput =
-    document.getElementById(
-      "galleryTitle"
-    );
-
-  const fileInput =
-    document.getElementById(
-      "galleryFile"
-    );
+    const panel =
+      document.getElementById('adminPanel');
 
 
-  if (!titleInput || !fileInput) {
-    return;
+    if (login) {
+      login.hidden = logged;
+    }
+
+    if (panel) {
+      panel.hidden = !logged;
+    }
+
+
+    if (logged) {
+      renderAdminList();
+    }
   }
 
 
-  const title =
-    titleInput.value.trim();
+  function renderAdminList() {
 
-
-  const file =
-    fileInput.files &&
-    fileInput.files[0];
-
-
-  if (!title) {
-
-    alert(
-      "Please enter an image title."
-    );
-
-    return;
-
-  }
-
-
-  if (!file) {
-
-    alert(
-      "Please select an image."
-    );
-
-    return;
-
-  }
-
-
-  if (
-    !file.type.startsWith(
-      "image/"
-    )
-  ) {
-
-    alert(
-      "Please select an image file."
-    );
-
-    return;
-
-  }
-
-
-  const button =
-    document.querySelector(
-      "#galleryForm button[type='submit']"
-    );
-
-
-  if (button) {
-
-    button.disabled =
-      true;
-
-    button.textContent =
-      "Uploading...";
-
-  }
-
-
-  try {
-
-    const compressedImage =
-      await compressImage(
-        file
+    const element =
+      document.getElementById(
+        'adminGalleryList'
       );
+
+    if (
+      !element ||
+      sessionStorage.getItem('krAdmin') !== 'true'
+    ) {
+      return;
+    }
 
 
     const gallery =
       getGallery();
 
 
-    const newImage = {
+    element.innerHTML =
+      gallery.map((item, index) => {
 
-      id:
-        "gallery-" +
-        Date.now() +
-        "-" +
-        Math.random()
-          .toString(36)
-          .substring(2, 9),
+        return `
+          <div class="admin-row">
 
-      title:
-        title,
+            <img
+              src="${escapeAttr(item.url)}"
+              alt=""
+            >
 
-      image:
-        compressedImage,
+            <span>
+              ${escapeHtml(item.title)}
+            </span>
 
-      default:
-        false,
+            <button
+              type="button"
+              onclick="removeGallery(${index})"
+            >
+              Remove
+            </button>
 
-      uploadedAt:
-        new Date().toISOString()
+          </div>
+        `;
 
-    };
-
-
-    gallery.push(
-      newImage
-    );
-
-
-    const saved =
-      saveGallery(
-        gallery
-      );
-
-
-    if (!saved) {
-      return;
-    }
-
-
-    titleInput.value = "";
-
-    fileInput.value = "";
-
-
-    const preview =
-      document.getElementById(
-        "galleryPreviewImg"
-      );
-
-    if (preview) {
-
-      preview.src =
-        "";
-
-      preview.style.display =
-        "none";
-
-    }
-
-
-    const fileName =
-      document.getElementById(
-        "galleryFileName"
-      );
-
-    if (fileName) {
-
-      fileName.textContent =
-        "";
-
-    }
-
-
-    renderGallery();
-
-    renderAdminGallery();
-
-
-    alert(
-      "Gallery image uploaded successfully."
-    );
-
-
-    /*
-       Restart automatic slider after gallery update.
-    */
-
-    restartGalleryAutoSlide();
-
-
-  } catch (error) {
-
-    console.error(
-      "Upload error:",
-      error
-    );
-
-
-    alert(
-      "Image upload failed. Please try another image."
-    );
-
-  } finally {
-
-    if (button) {
-
-      button.disabled =
-        false;
-
-      button.textContent =
-        "Upload to Gallery";
-
-    }
-
-  }
-
-}
-
-
-
-/* =========================================================
-   DELETE GALLERY IMAGE
-========================================================= */
-
-function deleteGalleryImage(
-  id
-) {
-
-  const confirmed =
-    window.confirm(
-      "Delete this gallery image?"
-    );
-
-
-  if (!confirmed) {
-    return;
+      }).join('');
   }
 
 
-  const gallery =
-    getGallery();
-
-
-  const updated =
-    gallery.filter(
-      function (item) {
-        return item.id !== id;
-      }
-    );
-
-
-  saveGallery(
-    updated
-  );
-
-
-  renderGallery();
-
-  renderAdminGallery();
-
-  restartGalleryAutoSlide();
-
-}
-
-
-
-/* =========================================================
-   GALLERY AUTO SLIDER
-========================================================= */
-
-let galleryAutoSlideTimer =
-  null;
-
-let galleryResumeTimer =
-  null;
-
-
-
-/* =========================================================
-   GET SLIDE DISTANCE
-========================================================= */
-
-function getGallerySlideDistance() {
-
-  const gallery =
-    document.getElementById(
-      "galleryGrid"
-    );
-
-
-  if (!gallery) {
-    return 0;
-  }
-
-
-  const firstItem =
-    gallery.querySelector(
-      ".gallery-item"
-    );
-
-
-  if (!firstItem) {
-    return 0;
-  }
-
-
-  const itemWidth =
-    firstItem.getBoundingClientRect()
-      .width;
-
-
-  const computed =
-    window.getComputedStyle(
-      gallery
-    );
-
-
-  const gap =
-    parseFloat(
-      computed.columnGap ||
-      computed.gap ||
-      "0"
-    ) || 0;
-
-
-  return itemWidth + gap;
-
-}
-
-
-
-/* =========================================================
-   MOVE NEXT
-========================================================= */
-
-function moveGalleryNext() {
-
-  const gallery =
-    document.getElementById(
-      "galleryGrid"
-    );
-
-
-  if (!gallery) {
-    return;
-  }
-
-
-  const maxScroll =
-    gallery.scrollWidth -
-    gallery.clientWidth;
-
-
-  if (maxScroll <= 5) {
-    return;
-  }
-
-
-  const distance =
-    getGallerySlideDistance();
-
-
-  if (distance <= 0) {
-    return;
-  }
-
-
-  /*
-     If we are near the end,
-     smoothly return to the beginning.
-  */
-
-  if (
-    gallery.scrollLeft >=
-    maxScroll - 10
-  ) {
-
-    gallery.scrollTo({
-      left: 0,
-      behavior: "smooth"
-    });
-
-  } else {
-
-    gallery.scrollBy({
-      left: distance,
-      behavior: "smooth"
-    });
-
-  }
-
-}
-
-
-
-/* =========================================================
-   MOVE PREVIOUS
-========================================================= */
-
-function moveGalleryPrevious() {
-
-  const gallery =
-    document.getElementById(
-      "galleryGrid"
-    );
-
-
-  if (!gallery) {
-    return;
-  }
-
-
-  const distance =
-    getGallerySlideDistance();
-
-
-  if (distance <= 0) {
-    return;
-  }
-
-
-  if (
-    gallery.scrollLeft <= 5
-  ) {
-
-    gallery.scrollTo({
-      left:
-        gallery.scrollWidth -
-        gallery.clientWidth,
-
-      behavior:
-        "smooth"
-    });
-
-  } else {
-
-    gallery.scrollBy({
-      left:
-        -distance,
-
-      behavior:
-        "smooth"
-    });
-
-  }
-
-}
-
-
-
-/* =========================================================
-   START AUTO SLIDE
-========================================================= */
-
-function startGalleryAutoSlide() {
-
-  clearInterval(
-    galleryAutoSlideTimer
-  );
-
-
-  galleryAutoSlideTimer =
-    setInterval(
-      function () {
-
-        moveGalleryNext();
-
-      },
-      3000
-    );
-
-}
-
-
-
-/* =========================================================
-   STOP AUTO SLIDE
-========================================================= */
-
-function stopGalleryAutoSlide() {
-
-  clearInterval(
-    galleryAutoSlideTimer
-  );
-
-}
-
-
-
-/* =========================================================
-   PAUSE THEN RESUME
-========================================================= */
-
-function pauseGalleryAutoSlide() {
-
-  stopGalleryAutoSlide();
-
-
-  clearTimeout(
-    galleryResumeTimer
-  );
-
-
-  galleryResumeTimer =
-    setTimeout(
-      function () {
-
-        startGalleryAutoSlide();
-
-      },
-      5000
-    );
-
-}
-
-
-
-/* =========================================================
-   RESTART AUTO SLIDE
-========================================================= */
-
-function restartGalleryAutoSlide() {
-
-  stopGalleryAutoSlide();
-
-
-  setTimeout(
-    function () {
-
-      startGalleryAutoSlide();
-
-    },
-    500
-  );
-
-}
-
-
-
-/* =========================================================
-   GALLERY CONTROLS
-========================================================= */
-
-function initializeGalleryControls() {
-
-  const gallery =
-    document.getElementById(
-      "galleryGrid"
-    );
-
-
-  const previous =
-    document.getElementById(
-      "galleryPrev"
-    );
-
-
-  const next =
-    document.getElementById(
-      "galleryNext"
-    );
-
-
-  if (previous) {
-
-    previous.addEventListener(
-      "click",
-      function () {
-
-        moveGalleryPrevious();
-
-        pauseGalleryAutoSlide();
-
-      }
-    );
-
-  }
-
-
-  if (next) {
-
-    next.addEventListener(
-      "click",
-      function () {
-
-        moveGalleryNext();
-
-        pauseGalleryAutoSlide();
-
-      }
-    );
-
-  }
-
-
-  if (!gallery) {
-    return;
-  }
-
-
-  gallery.addEventListener(
-    "mouseenter",
-    function () {
-
-      stopGalleryAutoSlide();
-
-    }
-  );
-
-
-  gallery.addEventListener(
-    "mouseleave",
-    function () {
-
-      startGalleryAutoSlide();
-
-    }
-  );
-
-
-  gallery.addEventListener(
-    "touchstart",
-    function () {
-
-      stopGalleryAutoSlide();
-
-    },
-    {
-      passive: true
-    }
-  );
-
-
-  gallery.addEventListener(
-    "touchend",
-    function () {
-
-      pauseGalleryAutoSlide();
-
-    },
-    {
-      passive: true
-    }
-  );
-
-
-  /*
-     Also pause when user manually scrolls.
-  */
-
-  gallery.addEventListener(
-    "wheel",
-    function () {
-
-      pauseGalleryAutoSlide();
-
-    },
-    {
-      passive: true
-    }
-  );
-
-}
-
-
-
-/* =========================================================
-   ENQUIRY FORM
-========================================================= */
-
-function initializeEnquiryForm() {
-
-  const form =
-    document.getElementById(
-      "enquiryForm"
-    );
-
-
-  if (!form) {
-    return;
-  }
-
-
-  form.addEventListener(
-    "submit",
-    function (event) {
-
-      event.preventDefault();
-
-
-      const name =
-        getInputValue(
-          "enquiryName"
-        );
-
-
-      const phone =
-        getInputValue(
-          "enquiryPhone"
-        );
-
-
-      const email =
-        getInputValue(
-          "enquiryEmail"
-        );
-
-
-      const type =
-        getInputValue(
-          "enquiryType"
-        );
-
-
-      const quantity =
-        getInputValue(
-          "enquiryQuantity"
-        );
-
-
-      const location =
-        getInputValue(
-          "enquiryLocation"
-        );
-
-
-      const message =
-        getInputValue(
-          "enquiryMessage"
-        );
-
-
-      if (!name || !phone) {
-
-        alert(
-          "Please enter your name and phone number."
-        );
-
-        return;
-
-      }
-
-
-      let whatsappMessage =
-        "🌱 KR NURSERIES - PLANT ENQUIRY\n\n";
-
-
-      whatsappMessage +=
-        "Name: " +
-        name +
-        "\n";
-
-
-      whatsappMessage +=
-        "Phone: " +
-        phone +
-        "\n";
-
-
-      if (email) {
-
-        whatsappMessage +=
-          "Email: " +
-          email +
-          "\n";
-
-      }
-
-
-      whatsappMessage +=
-        "Requirement: " +
-        type +
-        "\n";
-
-
-      if (quantity) {
-
-        whatsappMessage +=
-          "Quantity: " +
-          quantity +
-          "\n";
-
-      }
-
-
-      if (location) {
-
-        whatsappMessage +=
-          "Delivery Location: " +
-          location +
-          "\n";
-
-      }
-
-
-      if (message) {
-
-        whatsappMessage +=
-          "Message: " +
-          message +
-          "\n";
-
-      }
-
-
-      whatsappMessage +=
-        "\nSent through KR Nurseries website.";
-
-
-      const whatsappURL =
-        "https://wa.me/918328286323?text=" +
-        encodeURIComponent(
-          whatsappMessage
-        );
-
-
-      window.open(
-        whatsappURL,
-        "_blank",
-        "noopener"
-      );
-
-    }
-  );
-
-}
-
-
-
-/* =========================================================
-   GET INPUT VALUE
-========================================================= */
-
-function getInputValue(
-  id
-) {
-
-  const element =
-    document.getElementById(
-      id
-    );
-
-
-  if (!element) {
-    return "";
-  }
-
-
-  return element.value.trim();
-
-}
-
-
-
-/* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
-========================================================= */
-
-document.addEventListener(
-  "click",
-  function (event) {
-
-    const modal =
-      document.getElementById(
-        "adminModal"
-      );
-
-
-    if (
-      modal &&
-      event.target === modal
-    ) {
-
-      closeAdmin();
-
-    }
-
-  }
-);
-
-
-
-/* =========================================================
-   ESCAPE KEY CLOSE
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  function (event) {
-
-    if (
-      event.key === "Escape"
-    ) {
-
-      closeAdmin();
-
-    }
-
-  }
-);
-
-
-
-/* =========================================================
-   WINDOW RESIZE
-========================================================= */
-
-window.addEventListener(
-  "resize",
-  function () {
+  window.removeGallery = function (index) {
 
     const gallery =
-      document.getElementById(
-        "galleryGrid"
-      );
+      getGallery();
+
+    gallery.splice(index, 1);
+
+    saveGallery(gallery);
+  };
 
 
-    if (!gallery) {
-      return;
-    }
+  window.adminLogout = function () {
+
+    sessionStorage.removeItem(
+      'krAdmin'
+    );
+
+    renderAdmin();
+  };
 
 
-    gallery.scrollLeft = 0;
+  /* =========================
+     GALLERY UPLOAD
+  ========================= */
+  const galleryFile =
+    document.getElementById(
+      'galleryFile'
+    );
 
+  const galleryPreview =
+    document.getElementById(
+      'galleryPreview'
+    );
+
+  const galleryPreviewImg =
+    document.getElementById(
+      'galleryPreviewImg'
+    );
+
+  const galleryFileName =
+    document.getElementById(
+      'galleryFileName'
+    );
+
+
+  const MAX_IMAGE_SIZE =
+    5 * 1024 * 1024;
+
+
+  let selectedGalleryFile = null;
+
+
+  if (galleryFile) {
+
+    galleryFile.addEventListener(
+      'change',
+      () => {
+
+        const file =
+          galleryFile.files &&
+          galleryFile.files[0];
+
+
+        if (!file) {
+          return;
+        }
+
+
+        if (
+          !file.type.startsWith(
+            'image/'
+          )
+        ) {
+
+          galleryFile.value = '';
+
+          selectedGalleryFile = null;
+
+          if (galleryPreview) {
+            galleryPreview.hidden = true;
+          }
+
+          alert(
+            'Please select an image file.'
+          );
+
+          return;
+        }
+
+
+        if (
+          file.size >
+          MAX_IMAGE_SIZE
+        ) {
+
+          galleryFile.value = '';
+
+          selectedGalleryFile = null;
+
+          if (galleryPreview) {
+            galleryPreview.hidden = true;
+          }
+
+          alert(
+            'Image must be 5 MB or smaller.'
+          );
+
+          return;
+        }
+
+
+        selectedGalleryFile = file;
+
+
+        if (galleryFileName) {
+          galleryFileName.textContent =
+            file.name;
+        }
+
+
+        if (galleryPreviewImg) {
+
+          galleryPreviewImg.src =
+            URL.createObjectURL(file);
+
+        }
+
+
+        if (galleryPreview) {
+          galleryPreview.hidden = false;
+        }
+
+      }
+    );
   }
-);
+
+
+  const galleryForm =
+    document.getElementById(
+      'galleryForm'
+    );
+
+
+  if (galleryForm) {
+
+    galleryForm.addEventListener(
+      'submit',
+      e => {
+
+        e.preventDefault();
+
+
+        const titleElement =
+          document.getElementById(
+            'galleryTitle'
+          );
+
+
+        const title =
+          titleElement
+            ? titleElement.value.trim()
+            : '';
+
+
+        const file =
+          selectedGalleryFile;
+
+
+        if (!title || !file) {
+
+          alert(
+            'Please enter a title and select an image.'
+          );
+
+          return;
+        }
+
+
+        const reader =
+          new FileReader();
+
+
+        reader.onload = () => {
+
+          const gallery =
+            getGallery();
+
+
+          gallery.push({
+            title: title,
+            url: reader.result
+          });
+
+
+          try {
+
+            saveGallery(gallery);
+
+
+            galleryForm.reset();
+
+            selectedGalleryFile = null;
+
+
+            if (galleryPreview) {
+              galleryPreview.hidden = true;
+            }
+
+
+            if (galleryPreviewImg) {
+              galleryPreviewImg.removeAttribute(
+                'src'
+              );
+            }
+
+
+            if (galleryFileName) {
+              galleryFileName.textContent = '';
+            }
+
+
+          } catch (error) {
+
+            console.error(
+              'Gallery save error:',
+              error
+            );
+
+
+            alert(
+              'The image could not be saved in this browser. Try a smaller image.'
+            );
+          }
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+      }
+    );
+  }
+
+
+  /* =========================
+     SECURITY / ESCAPING
+  ========================= */
+  function escapeHtml(value) {
+
+    return String(value).replace(
+      /[&<>"']/g,
+      character => {
+
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[character];
+
+      }
+    );
+  }
+
+
+  function escapeAttr(value) {
+    return escapeHtml(value);
+  }
+
+
+  /* =========================
+     START GALLERY
+  ========================= */
+  renderGallery();
+
+  renderAdmin();
+
+});
