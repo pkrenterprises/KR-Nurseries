@@ -1,4 +1,4 @@
-const ADMIN_NUMBERS = ['KRNursery1611'];
+const ADMIN_NUMBERS = ['161118'];
 
 const DEFAULT_GALLERY = [
   {
