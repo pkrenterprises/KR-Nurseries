@@ -1,943 +1,4568 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
 
-<title>KR Nurseries | Premium Agricultural Plants & Bulk Supply</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="KR Nurseries supplies quality agricultural and nursery plants with bulk supply and delivery across Andhra Pradesh, Telangana, Tamil Nadu and Karnataka.">
-<meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#123d28">
 
-<link rel="canonical" href="https://kr-nurseries.pkrenterprises-co.workers.dev/">
+  <title>KR Nurseries | Agricultural Plants & Bulk Nursery Supply</title>
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23087443'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='38' font-family='Arial' font-weight='bold' fill='white'%3EKR%3C/text%3E%3C/svg%3E">
+  <meta name="description"
+        content="KR Nurseries by PKR Enterprises - agricultural plants, nursery plants, bulk supply and delivery across Andhra Pradesh, Telangana, Tamil Nadu and Karnataka.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="keywords"
+        content="KR Nurseries, KSHITRIVA, agricultural plants, nursery plants, bulk plants, agriculture, farming, PKR Enterprises, plants Andhra Pradesh, plants Karnataka, plants Telangana, plants Tamil Nadu">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta name="author"
+        content="KR Nurseries | PKR Enterprises">
 
-<link rel="stylesheet" href="styles.css">
+  <meta property="og:title"
+        content="KR Nurseries | Agricultural Plants & Bulk Supply">
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"GardenStore",
-  "name":"KR Nurseries",
-  "url":"https://kr-nurseries.pkrenterprises-co.workers.dev/",
-  "telephone":"+91-8328286323",
-  "parentOrganization":{
-    "@type":"Organization",
-    "name":"PKR Enterprises"
-  },
-  "areaServed":[
-    "Andhra Pradesh",
-    "Telangana",
-    "Tamil Nadu",
-    "Karnataka"
-  ]
-}
-</script>
+  <meta property="og:description"
+        content="Quality agricultural plants and nursery supply from KR Nurseries.">
+
+  <meta property="og:type"
+        content="website">
+
+  <meta property="og:url"
+        content="https://krnurseries.sarvampada.info/">
+
+  <link rel="canonical"
+        href="https://krnurseries.sarvampada.info/">
+
+  <style>
+
+    /* =========================================================
+       KR NURSERIES
+       KSHITRIVA ANIMATED AGRICULTURE BACKGROUND
+       ========================================================= */
+
+    :root {
+      --green-950:#071c12;
+      --green-900:#0b2a19;
+      --green-800:#123d28;
+      --green-700:#185c38;
+      --green-600:#23814c;
+      --green-500:#36a85f;
+      --green-400:#6bcf7f;
+
+      --earth:#6f4b2b;
+      --earth-light:#a87847;
+
+      --cream:#f7f2e7;
+      --white:#ffffff;
+
+      --gold:#e4bd68;
+
+      --text:#17251c;
+      --muted:#637267;
+
+      --shadow:0 18px 60px rgba(0,0,0,.14);
+
+      --radius:24px;
+    }
+
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html {
+      scroll-behavior:smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color:var(--text);
+      background:#f8f7f0;
+      overflow-x:hidden;
+    }
+
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font:inherit;
+    }
+
+    img {
+      max-width:100%;
+      display:block;
+    }
+
+    /* =========================================================
+       GLOBAL ANIMATED AGRICULTURE BACKGROUND
+       ========================================================= */
+
+    .agri-bg {
+      position:fixed;
+      inset:0;
+      z-index:-10;
+      overflow:hidden;
+      pointer-events:none;
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(74,170,95,.18),
+          transparent 32%
+        ),
+        linear-gradient(
+          180deg,
+          #071c12 0%,
+          #0c3420 45%,
+          #183e25 70%,
+          #0c2417 100%
+        );
+    }
+
+    .agri-sun {
+      position:absolute;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      top:-170px;
+      right:10%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,231,145,.8) 0%,
+          rgba(231,191,91,.25) 35%,
+          transparent 70%
+        );
+
+      filter:blur(5px);
+
+      animation:
+        sunPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes sunPulse {
+
+      0%,
+      100% {
+        transform:scale(1);
+        opacity:.7;
+      }
+
+      50% {
+        transform:scale(1.08);
+        opacity:1;
+      }
+    }
+
+    /* distant agricultural hills */
+
+    .agri-hills {
+      position:absolute;
+      left:-10%;
+      right:-10%;
+      bottom:12%;
+      height:38%;
+      opacity:.75;
+    }
+
+    .hill {
+      position:absolute;
+      bottom:0;
+      border-radius:50% 50% 0 0;
+      filter:blur(.5px);
+    }
+
+    .hill.one {
+      width:65%;
+      height:80%;
+      left:-10%;
+      background:#123c25;
+      transform:rotate(-4deg);
+    }
+
+    .hill.two {
+      width:70%;
+      height:70%;
+      right:-15%;
+      background:#0d321f;
+      transform:rotate(5deg);
+    }
+
+    .hill.three {
+      width:75%;
+      height:55%;
+      left:15%;
+      background:#174a2b;
+    }
+
+    /* farm field */
+
+    .agri-field {
+      position:absolute;
+      left:-10%;
+      right:-10%;
+      bottom:-8%;
+      height:40%;
+      transform:perspective(600px) rotateX(48deg);
+      transform-origin:center bottom;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(69,129,61,.25) 0 3px,
+          transparent 3px 75px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(196,163,78,.12) 0 2px,
+          transparent 2px 38px
+        ),
+        linear-gradient(
+          180deg,
+          #245b31,
+          #112b1b
+        );
+
+      opacity:.85;
+    }
+
+    /* field glow */
+
+    .field-glow {
+      position:absolute;
+      left:10%;
+      right:10%;
+      bottom:20%;
+      height:100px;
+
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(104,190,101,.18),
+          transparent 70%
+        );
+
+      filter:blur(20px);
+
+      animation:
+        fieldGlow 7s ease-in-out infinite;
+    }
+
+    @keyframes fieldGlow {
+
+      0%,
+      100% {
+        transform:translateX(-2%);
+      }
+
+      50% {
+        transform:translateX(2%);
+      }
+    }
+
+    /* =========================================================
+       FLOATING AGRICULTURAL PARTICLES
+       ========================================================= */
+
+    .particles {
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+    }
+
+    .particle {
+      position:absolute;
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:rgba(190,232,151,.75);
+      box-shadow:0 0 12px rgba(177,239,137,.5);
+
+      animation:
+        particleFloat linear infinite;
+    }
+
+    @keyframes particleFloat {
+
+      from {
+        transform:
+          translate3d(0,110vh,0)
+          scale(.4);
+        opacity:0;
+      }
+
+      15% {
+        opacity:.9;
+      }
+
+      80% {
+        opacity:.7;
+      }
+
+      to {
+        transform:
+          translate3d(80px,-15vh,0)
+          scale(1);
+        opacity:0;
+      }
+    }
+
+    /* =========================================================
+       FLOATING LEAVES
+       ========================================================= */
+
+    .leaves {
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+    }
+
+    .leaf {
+      position:absolute;
+      width:18px;
+      height:34px;
+
+      border-radius:
+        100% 0 100% 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          #8bd26e,
+          #26763c
+        );
+
+      opacity:.45;
+
+      filter:drop-shadow(
+        0 5px 7px rgba(0,0,0,.2)
+      );
+
+      animation:
+        leafFall linear infinite;
+    }
+
+    .leaf::after {
+      content:"";
+      position:absolute;
+      width:2px;
+      height:29px;
+      left:8px;
+      top:3px;
+      background:rgba(235,255,210,.4);
+      transform:rotate(25deg);
+    }
+
+    @keyframes leafFall {
+
+      0% {
+        transform:
+          translate3d(0,-15vh,0)
+          rotate(0deg);
+      }
+
+      25% {
+        transform:
+          translate3d(100px,25vh,0)
+          rotate(90deg);
+      }
+
+      50% {
+        transform:
+          translate3d(-70px,55vh,0)
+          rotate(180deg);
+      }
+
+      75% {
+        transform:
+          translate3d(130px,80vh,0)
+          rotate(270deg);
+      }
+
+      100% {
+        transform:
+          translate3d(-40px,115vh,0)
+          rotate(360deg);
+      }
+    }
+
+    /* =========================================================
+       KSHITRIVA WATER / LIGHT RIBBON
+       ========================================================= */
+
+    .agri-ribbon {
+      position:absolute;
+      width:160%;
+      height:180px;
+      left:-30%;
+      top:45%;
+
+      border-top:
+        2px solid rgba(153,221,150,.12);
+
+      border-radius:50%;
+
+      filter:blur(1px);
+
+      transform:rotate(-7deg);
+
+      animation:
+        ribbonMove 12s ease-in-out infinite;
+    }
+
+    @keyframes ribbonMove {
+
+      0%,
+      100% {
+        transform:
+          translateX(-2%)
+          rotate(-7deg);
+      }
+
+      50% {
+        transform:
+          translateX(2%)
+          rotate(-5deg);
+      }
+    }
+
+    /* =========================================================
+       TOP ANNOUNCEMENT
+       ========================================================= */
+
+    .announcement {
+      background:
+        linear-gradient(
+          90deg,
+          #092317,
+          #15532f,
+          #092317
+        );
+
+      color:#eaf7df;
+
+      text-align:center;
+
+      padding:9px 15px;
+
+      font-size:12px;
+      letter-spacing:.7px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
+    }
+
+    .announcement strong {
+      color:#d7ef9e;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+      position:sticky;
+      top:0;
+      z-index:100;
+
+      background:
+        rgba(5,25,16,.86);
+
+      backdrop-filter:
+        blur(20px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.1);
+    }
+
+    .nav {
+      max-width:1250px;
+      margin:auto;
+
+      height:76px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 20px;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      color:white;
+    }
+
+    .brand-logo {
+      width:48px;
+      height:48px;
+
+      border-radius:14px;
+
+      display:grid;
+      place-items:center;
+
+      font-weight:900;
+      font-size:17px;
+
+      color:#10331f;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e7c96e,
+          #83d276
+        );
+
+      box-shadow:
+        0 0 30px rgba(119,212,112,.18);
+    }
+
+    .brand-text strong {
+      display:block;
+      font-size:18px;
+      letter-spacing:.5px;
+    }
+
+    .brand-text small {
+      display:block;
+      color:#a9c4ae;
+      font-size:10px;
+      letter-spacing:1.7px;
+      text-transform:uppercase;
+      margin-top:2px;
+    }
+
+    nav {
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+
+    nav a {
+      color:#e6f0e6;
+      font-size:14px;
+      transition:.25s;
+    }
+
+    nav a:hover {
+      color:#a9e07e;
+    }
+
+    .nav-cta {
+      padding:11px 18px;
+
+      border-radius:999px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #75c866,
+          #25804a
+        );
+
+      color:white !important;
+
+      font-weight:700;
+
+      box-shadow:
+        0 8px 25px rgba(45,150,75,.2);
+    }
+
+    .menu-btn {
+      display:none;
+
+      border:0;
+      background:none;
+      color:white;
+      font-size:27px;
+      cursor:pointer;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position:relative;
+
+      min-height:
+        calc(100vh - 85px);
+
+      display:flex;
+      align-items:center;
+
+      overflow:hidden;
+
+      color:white;
+    }
+
+    .hero-overlay {
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4,23,14,.94) 0%,
+          rgba(4,23,14,.76) 42%,
+          rgba(4,23,14,.32) 75%,
+          rgba(4,23,14,.55) 100%
+        );
+    }
+
+    .hero-content {
+      position:relative;
+      z-index:2;
+
+      width:min(1250px,100%);
+
+      margin:auto;
+
+      padding:
+        80px 20px
+        150px;
+    }
+
+    .eyebrow {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+
+      padding:8px 13px;
+
+      border-radius:999px;
+
+      background:
+        rgba(151,213,116,.1);
+
+      border:
+        1px solid rgba(151,213,116,.25);
+
+      color:#c5e9a6;
+
+      font-size:12px;
+      font-weight:700;
+
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+    }
+
+    .eyebrow span {
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#8be16e;
+
+      box-shadow:
+        0 0 15px #8be16e;
+    }
+
+    .hero h1 {
+      max-width:850px;
+
+      font-size:
+        clamp(
+          46px,
+          7vw,
+          92px
+        );
+
+      line-height:.96;
+
+      margin:
+        25px 0 25px;
+
+      letter-spacing:-4px;
+    }
+
+    .hero h1 span {
+      display:block;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fff,
+          #b5e78d,
+          #e7ce7d
+        );
+
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+
+      background-size:200% auto;
+
+      animation:
+        titleShine 7s linear infinite;
+    }
+
+    @keyframes titleShine {
+
+      to {
+        background-position:200% center;
+      }
+    }
+
+    .hero-description {
+      max-width:680px;
+
+      color:#d4e4d6;
+
+      font-size:
+        clamp(16px,2vw,20px);
+
+      line-height:1.7;
+
+      margin-bottom:35px;
+    }
+
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      min-height:52px;
+
+      padding:
+        0 23px;
+
+      border-radius:999px;
+
+      border:1px solid transparent;
+
+      font-weight:800;
+
+      cursor:pointer;
+
+      transition:
+        transform .25s,
+        box-shadow .25s;
+    }
+
+    .btn:hover {
+      transform:translateY(-3px);
+    }
+
+    .btn-primary {
+      background:
+        linear-gradient(
+          135deg,
+          #83d36e,
+          #27824b
+        );
+
+      color:white;
+
+      box-shadow:
+        0 15px 35px rgba(43,138,76,.28);
+    }
+
+    .btn-secondary {
+      color:white;
+
+      border-color:
+        rgba(255,255,255,.2);
+
+      background:
+        rgba(255,255,255,.07);
+
+      backdrop-filter:blur(10px);
+    }
+
+    .hero-brands {
+      position:absolute;
+
+      right:5%;
+      bottom:95px;
+
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+
+      z-index:3;
+    }
+
+    .brand-pill {
+      padding:
+        11px 17px;
+
+      border-radius:999px;
+
+      background:
+        rgba(8,30,19,.6);
+
+      border:
+        1px solid rgba(180,230,151,.2);
+
+      backdrop-filter:blur(12px);
+
+      color:#dcefd0;
+
+      font-size:12px;
+      font-weight:700;
+
+      letter-spacing:.6px;
+    }
+
+    /* =========================================================
+       HERO BOTTOM FIELD PLANTS
+       ========================================================= */
+
+    .hero-plants {
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      right:0;
+
+      height:170px;
+
+      z-index:2;
+
+      overflow:hidden;
+    }
+
+    .plant {
+      position:absolute;
+      bottom:-30px;
+
+      width:4px;
+      height:120px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #1c612f,
+          #75b94f
+        );
+
+      border-radius:100%;
+
+      transform-origin:bottom;
+
+      animation:
+        plantSway
+        var(--duration,5s)
+        ease-in-out
+        infinite
+        alternate;
+    }
+
+    .plant::before,
+    .plant::after {
+      content:"";
+
+      position:absolute;
+
+      width:35px;
+      height:17px;
+
+      background:#559e46;
+
+      border-radius:
+        100% 0 100% 0;
+    }
+
+    .plant::before {
+      left:-30px;
+      top:30px;
+      transform:rotate(-22deg);
+    }
+
+    .plant::after {
+      right:-30px;
+      top:58px;
+      transform:rotate(22deg) scaleX(-1);
+    }
+
+    @keyframes plantSway {
+
+      from {
+        transform:rotate(-4deg);
+      }
+
+      to {
+        transform:rotate(5deg);
+      }
+    }
+
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+
+    section {
+      position:relative;
+    }
+
+    .section {
+      padding:
+        100px 20px;
+    }
+
+    .section-inner {
+      width:min(1180px,100%);
+      margin:auto;
+    }
+
+    .section-label {
+      color:#4f9b53;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:12px;
+    }
+
+    .section-title {
+      font-size:
+        clamp(32px,5vw,56px);
+
+      line-height:1.05;
+
+      letter-spacing:-2px;
+
+      color:#173523;
+
+      margin-bottom:20px;
+    }
+
+    .section-description {
+      color:var(--muted);
+
+      line-height:1.75;
+
+      max-width:720px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about {
+      background:
+        linear-gradient(
+          180deg,
+          #f8f7ef,
+          #eef5e9
+        );
+    }
+
+    .about-grid {
+      display:grid;
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:60px;
+
+      align-items:center;
+    }
+
+    .about-visual {
+      min-height:430px;
+
+      border-radius:35px;
+
+      overflow:hidden;
+
+      position:relative;
+
+      background:
+        linear-gradient(
+          145deg,
+          #174b2b,
+          #4d7f42 50%,
+          #a47a42
+        );
+
+      box-shadow:var(--shadow);
+    }
+
+    .about-visual::before {
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        repeating-linear-gradient(
+          70deg,
+          transparent 0 35px,
+          rgba(255,255,255,.07) 36px 38px
+        );
+    }
+
+    .about-logo {
+      position:absolute;
+
+      left:50%;
+      top:50%;
+
+      transform:
+        translate(-50%,-50%);
+
+      width:180px;
+      height:180px;
+
+      border-radius:50%;
+
+      display:grid;
+      place-items:center;
+
+      text-align:center;
+
+      background:
+        rgba(255,255,255,.12);
+
+      border:
+        1px solid rgba(255,255,255,.3);
+
+      backdrop-filter:blur(15px);
+
+      color:white;
+
+      font-weight:900;
+
+      font-size:28px;
+    }
+
+    .about-points {
+      display:grid;
+      gap:16px;
+
+      margin-top:30px;
+    }
+
+    .about-point {
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+
+    .check {
+      flex:none;
+
+      width:28px;
+      height:28px;
+
+      border-radius:50%;
+
+      display:grid;
+      place-items:center;
+
+      background:#dff0d6;
+
+      color:#29753d;
+
+      font-weight:900;
+    }
+
+    .about-point strong {
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .about-point p {
+      color:var(--muted);
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    /* =========================================================
+       KSHITRIVA FEATURE
+       ========================================================= */
+
+    .kshitRiva {
+      color:white;
+
+      overflow:hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #092518,
+          #174f2c
+        );
+    }
+
+    .kshitRiva::before {
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(167,218,109,.17),
+          transparent 30%
+        );
+    }
+
+    .kshit-grid {
+      position:relative;
+
+      display:grid;
+      grid-template-columns:
+        1.1fr .9fr;
+
+      gap:60px;
+
+      align-items:center;
+    }
+
+    .kshitRiva .section-label {
+      color:#a8d97d;
+    }
+
+    .kshitRiva .section-title {
+      color:white;
+    }
+
+    .kshitRiva .section-description {
+      color:#c4d9c7;
+    }
+
+    .kshit-card {
+      position:relative;
+
+      padding:38px;
+
+      border-radius:30px;
+
+      background:
+        rgba(255,255,255,.07);
+
+      border:
+        1px solid rgba(255,255,255,.12);
+
+      backdrop-filter:blur(18px);
+
+      overflow:hidden;
+    }
+
+    .kshit-card::before {
+      content:"KSHITRIVA";
+
+      position:absolute;
+
+      right:-30px;
+      bottom:-30px;
+
+      font-size:90px;
+      font-weight:1000;
+
+      color:rgba(255,255,255,.035);
+
+      transform:rotate(-8deg);
+    }
+
+    .kshit-logo {
+      width:76px;
+      height:76px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:24px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #b9e87c,
+          #2e874a
+        );
+
+      color:#0a2a18;
+
+      font-size:25px;
+      font-weight:1000;
+
+      margin-bottom:22px;
+    }
+
+    .kshit-card h3 {
+      font-size:27px;
+      margin-bottom:12px;
+    }
+
+    .kshit-card p {
+      color:#bdd0c0;
+      line-height:1.7;
+    }
+
+    /* =========================================================
+       CATEGORIES
+       ========================================================= */
+
+    .categories {
+      background:#fff;
+    }
+
+    .category-grid {
+      margin-top:45px;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:20px;
+    }
+
+    .category {
+      position:relative;
+
+      min-height:230px;
+
+      padding:25px;
+
+      border-radius:24px;
+
+      overflow:hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #eff8e9,
+          #d8ecd1
+        );
+
+      border:
+        1px solid #dcead6;
+
+      transition:
+        transform .3s,
+        box-shadow .3s;
+    }
+
+    .category:hover {
+      transform:translateY(-8px);
+
+      box-shadow:
+        0 18px 40px rgba(37,103,53,.14);
+    }
+
+    .category-icon {
+      font-size:44px;
+      margin-bottom:25px;
+    }
+
+    .category h3 {
+      color:#183b25;
+      font-size:20px;
+      margin-bottom:8px;
+    }
+
+    .category p {
+      color:#657366;
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .category-number {
+      position:absolute;
+
+      right:15px;
+      bottom:-10px;
+
+      font-size:75px;
+      font-weight:1000;
+
+      color:rgba(36,105,53,.06);
+    }
+
+    /* =========================================================
+       GALLERY
+       ========================================================= */
+
+    .gallery-section {
+      background:#f2f5ed;
+    }
+
+    .gallery-wrap {
+      margin-top:45px;
+    }
+
+    .gallery-viewport {
+      overflow:hidden;
+      border-radius:30px;
+    }
+
+    #galleryGrid {
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:18px;
+
+      transition:
+        transform .5s ease;
+    }
+
+    .gallery-item {
+      position:relative;
+
+      aspect-ratio:4/3;
+
+      overflow:hidden;
+
+      border-radius:22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #dcead4,
+          #aac697
+        );
+
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.09);
+    }
+
+    .gallery-item img {
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      transition:
+        transform .7s ease;
+    }
+
+    .gallery-item:hover img {
+      transform:scale(1.07);
+    }
+
+    .gallery-caption {
+      position:absolute;
+
+      left:0;
+      right:0;
+      bottom:0;
+
+      padding:25px 18px 18px;
+
+      color:white;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(0,0,0,.75)
+        );
+    }
+
+    .gallery-caption strong {
+      display:block;
+      font-size:16px;
+    }
+
+    .gallery-caption small {
+      opacity:.8;
+    }
+
+    .gallery-controls {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:15px;
+
+      margin-top:25px;
+    }
+
+    .gallery-btn {
+      width:46px;
+      height:46px;
+
+      border-radius:50%;
+
+      border:
+        1px solid #d2dfcf;
+
+      background:white;
+
+      cursor:pointer;
+
+      font-size:18px;
+
+      transition:.25s;
+    }
+
+    .gallery-btn:hover {
+      background:#e9f4e4;
+      transform:translateY(-2px);
+    }
+
+    #galleryDots {
+      display:flex;
+      gap:7px;
+    }
+
+    .gallery-dot {
+      width:8px;
+      height:8px;
+
+      border:0;
+      border-radius:50%;
+
+      background:#c7d3c5;
+
+      cursor:pointer;
+    }
+
+    .gallery-dot.active {
+      width:24px;
+      border-radius:999px;
+      background:#3c8e4d;
+    }
+
+    /* =========================================================
+       BULK SUPPLY
+       ========================================================= */
+
+    .bulk {
+      background:
+        linear-gradient(
+          135deg,
+          #f5f0df,
+          #eaf2dc
+        );
+    }
+
+    .bulk-box {
+      position:relative;
+
+      overflow:hidden;
+
+      border-radius:35px;
+
+      padding:60px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #173e27,
+          #275d36
+        );
+
+      color:white;
+
+      box-shadow:var(--shadow);
+    }
+
+    .bulk-box::after {
+      content:"";
+
+      position:absolute;
+
+      width:400px;
+      height:400px;
+
+      right:-180px;
+      top:-180px;
+
+      border-radius:50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(186,222,116,.25),
+          transparent 65%
+        );
+    }
+
+    .bulk-grid {
+      position:relative;
+      z-index:2;
+
+      display:grid;
+
+      grid-template-columns:
+        1fr .8fr;
+
+      gap:40px;
+
+      align-items:center;
+    }
+
+    .bulk h2 {
+      font-size:
+        clamp(32px,5vw,55px);
+
+      line-height:1.05;
+
+      letter-spacing:-2px;
+
+      margin-bottom:20px;
+    }
+
+    .bulk p {
+      color:#c8dac9;
+      line-height:1.7;
+    }
+
+    .bulk-list {
+      display:grid;
+      gap:13px;
+      margin-top:25px;
+    }
+
+    .bulk-list span {
+      display:flex;
+      gap:10px;
+      align-items:center;
+
+      color:#e2efe2;
+    }
+
+    .bulk-list b {
+      color:#a9dd83;
+    }
+
+    /* =========================================================
+       DELIVERY
+       ========================================================= */
+
+    .delivery {
+      background:white;
+      text-align:center;
+    }
+
+    .states {
+      margin-top:40px;
+
+      display:flex;
+      flex-wrap:wrap;
+
+      justify-content:center;
+
+      gap:13px;
+    }
+
+    .state {
+      padding:
+        13px 21px;
+
+      border-radius:999px;
+
+      background:#edf6e9;
+
+      color:#245e32;
+
+      border:
+        1px solid #d8ead1;
+
+      font-weight:800;
+    }
+
+    .delivery-note {
+      margin-top:25px;
+
+      color:#647367;
+
+      font-size:14px;
+    }
+
+    /* =========================================================
+       BRANCHES
+       ========================================================= */
+
+    .branches {
+      background:#f4f6ef;
+    }
+
+    .branch-grid {
+      margin-top:45px;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap:25px;
+    }
+
+    .branch {
+      position:relative;
+
+      padding:35px;
+
+      border-radius:28px;
+
+      background:white;
+
+      border:
+        1px solid #e0e9dc;
+
+      box-shadow:
+        0 12px 35px rgba(31,77,41,.07);
+    }
+
+    .branch-tag {
+      display:inline-block;
+
+      padding:6px 10px;
+
+      border-radius:999px;
+
+      background:#e6f3df;
+
+      color:#337242;
+
+      font-size:11px;
+
+      font-weight:900;
+
+      text-transform:uppercase;
+
+      letter-spacing:1px;
+
+      margin-bottom:18px;
+    }
+
+    .branch h3 {
+      color:#173a24;
+
+      font-size:24px;
+
+      margin-bottom:12px;
+    }
+
+    .branch p {
+      color:#657267;
+
+      line-height:1.7;
+
+      font-size:14px;
+    }
+
+    .branch-contact {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+
+      margin-top:22px;
+    }
+
+    .contact-chip {
+      padding:9px 13px;
+
+      border-radius:10px;
+
+      background:#f0f6ed;
+
+      color:#28613a;
+
+      font-size:13px;
+
+      font-weight:800;
+    }
+
+    /* =========================================================
+       ENQUIRY
+       ========================================================= */
+
+    .contact {
+      background:
+        linear-gradient(
+          135deg,
+          #0a2517,
+          #194a2a
+        );
+
+      color:white;
+    }
+
+    .contact-grid {
+      display:grid;
+
+      grid-template-columns:
+        .8fr 1.2fr;
+
+      gap:55px;
+
+      align-items:start;
+    }
+
+    .contact .section-title {
+      color:white;
+    }
+
+    .contact .section-description {
+      color:#c4d7c7;
+    }
+
+    .contact-info {
+      margin-top:30px;
+
+      display:grid;
+      gap:15px;
+    }
+
+    .contact-info-item {
+      padding:18px;
+
+      border-radius:18px;
+
+      background:
+        rgba(255,255,255,.06);
+
+      border:
+        1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-info-item small {
+      color:#9fbba4;
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .contact-info-item strong {
+      color:#e6f4e6;
+    }
+
+    .enquiry-card {
+      padding:35px;
+
+      border-radius:28px;
+
+      background:white;
+
+      color:#183223;
+
+      box-shadow:
+        0 20px 70px rgba(0,0,0,.2);
+    }
+
+    .enquiry-card h3 {
+      font-size:25px;
+      margin-bottom:8px;
+    }
+
+    .enquiry-card > p {
+      color:#69756b;
+      font-size:14px;
+      margin-bottom:25px;
+    }
+
+    .form-grid {
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap:14px;
+    }
+
+    .field {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+
+    .field.full {
+      grid-column:1/-1;
+    }
+
+    .field label {
+      font-size:12px;
+      font-weight:800;
+      color:#4d5d51;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width:100%;
+
+      border:
+        1px solid #dbe4d9;
+
+      background:#f8faf7;
+
+      border-radius:12px;
+
+      padding:13px 14px;
+
+      outline:none;
+
+      color:#1c3022;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color:#5da75b;
+
+      box-shadow:
+        0 0 0 3px rgba(93,167,91,.12);
+    }
+
+    .field textarea {
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .submit-btn {
+      margin-top:15px;
+      width:100%;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background:#06180f;
+      color:#b9cbbb;
+
+      padding:55px 20px 25px;
+    }
+
+    .footer-inner {
+      width:min(1180px,100%);
+      margin:auto;
+    }
+
+    .footer-grid {
+      display:grid;
+
+      grid-template-columns:
+        1.2fr 1fr 1fr;
+
+      gap:40px;
+
+      padding-bottom:40px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-brand {
+      color:white;
+      font-size:22px;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    footer p {
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .footer-title {
+      color:white;
+      font-weight:900;
+      margin-bottom:15px;
+    }
+
+    .footer-links {
+      display:grid;
+      gap:9px;
+      font-size:14px;
+    }
+
+    .footer-links a:hover {
+      color:#a9db7b;
+    }
+
+    .footer-bottom {
+      padding-top:22px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:15px;
+
+      font-size:12px;
+    }
+
+    .footer-admin {
+      border:0;
+      background:none;
+      color:#758b7b;
+      cursor:pointer;
+      font-size:11px;
+    }
+
+    .footer-admin:hover {
+      color:#b3d696;
+    }
+
+    /* =========================================================
+       WHATSAPP
+       ========================================================= */
+
+    .floatwa {
+      position:fixed;
+
+      right:20px;
+      bottom:20px;
+
+      width:58px;
+      height:58px;
+
+      border-radius:50%;
+
+      display:grid;
+      place-items:center;
+
+      background:#25d366;
+
+      color:white;
+
+      font-size:25px;
+
+      z-index:200;
+
+      box-shadow:
+        0 12px 30px rgba(37,211,102,.35);
+
+      animation:
+        waPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes waPulse {
+
+      0%,
+      100% {
+        box-shadow:
+          0 12px 30px rgba(37,211,102,.35);
+      }
+
+      50% {
+        box-shadow:
+          0 12px 40px rgba(37,211,102,.65);
+      }
+    }
+
+    /* =========================================================
+       ADMIN MODAL
+       ========================================================= */
+
+    .modal {
+      position:fixed;
+
+      inset:0;
+
+      z-index:500;
+
+      display:none;
+
+      align-items:center;
+      justify-content:center;
+
+      padding:20px;
+
+      background:
+        rgba(0,0,0,.7);
+
+      backdrop-filter:blur(10px);
+    }
+
+    .modal.show {
+      display:flex;
+    }
+
+    .modalbox {
+      width:min(700px,100%);
+
+      max-height:90vh;
+
+      overflow:auto;
+
+      border-radius:25px;
+
+      background:white;
+
+      padding:30px;
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.35);
+    }
+
+    .modal-head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      margin-bottom:22px;
+    }
+
+    .modal-head h3 {
+      color:#173723;
+    }
+
+    .close-modal {
+      width:40px;
+      height:40px;
+
+      border:0;
+      border-radius:50%;
+
+      background:#edf2eb;
+
+      cursor:pointer;
+
+      font-size:20px;
+    }
+
+    .admin-panel {
+      display:none;
+    }
+
+    .admin-panel.show {
+      display:block;
+    }
+
+    .admin-error {
+      color:#c43131;
+      font-size:13px;
+      margin-top:10px;
+    }
+
+    .admin-gallery-list {
+      display:grid;
+      gap:10px;
+
+      margin-top:20px;
+    }
+
+    .admin-gallery-item {
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      padding:10px;
+
+      border-radius:12px;
+
+      background:#f2f6ef;
+    }
+
+    .admin-gallery-item img {
+      width:70px;
+      height:55px;
+
+      object-fit:cover;
+
+      border-radius:8px;
+    }
+
+    .admin-gallery-item button {
+      margin-left:auto;
+
+      border:0;
+
+      padding:8px 12px;
+
+      border-radius:8px;
+
+      background:#ffe3e3;
+
+      color:#a92929;
+
+      cursor:pointer;
+    }
+
+    .preview {
+      display:none;
+
+      margin-top:15px;
+    }
+
+    .preview img {
+      max-height:180px;
+      border-radius:12px;
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width:900px) {
+
+      nav {
+        display:none;
+
+        position:absolute;
+
+        top:76px;
+        left:0;
+        right:0;
+
+        padding:20px;
+
+        flex-direction:column;
+
+        background:#092217;
+
+        border-bottom:
+          1px solid rgba(255,255,255,.1);
+      }
+
+      nav.open {
+        display:flex;
+      }
+
+      .menu-btn {
+        display:block;
+      }
+
+      .about-grid,
+      .kshit-grid,
+      .bulk-grid,
+      .contact-grid {
+        grid-template-columns:1fr;
+      }
+
+      .category-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      #galleryGrid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .branch-grid {
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .hero-brands {
+        display:none;
+      }
+    }
+
+    @media (max-width:600px) {
+
+      .announcement {
+        font-size:10px;
+      }
+
+      .nav {
+        height:68px;
+      }
+
+      .brand-logo {
+        width:42px;
+        height:42px;
+      }
+
+      .brand-text strong {
+        font-size:15px;
+      }
+
+      .brand-text small {
+        font-size:8px;
+      }
+
+      .hero {
+        min-height:
+          calc(100vh - 68px);
+      }
+
+      .hero-content {
+        padding:
+          65px 20px
+          130px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(42px,14vw,65px);
+
+        letter-spacing:-3px;
+      }
+
+      .hero-description {
+        font-size:15px;
+      }
+
+      .hero-actions {
+        flex-direction:column;
+      }
+
+      .hero-actions .btn {
+        width:100%;
+      }
+
+      .section {
+        padding:70px 18px;
+      }
+
+      .category-grid {
+        grid-template-columns:1fr;
+      }
+
+      #galleryGrid {
+        grid-template-columns:1fr;
+      }
+
+      .bulk-box {
+        padding:35px 25px;
+      }
+
+      .form-grid {
+        grid-template-columns:1fr;
+      }
+
+      .field.full {
+        grid-column:auto;
+      }
+
+      .enquiry-card {
+        padding:24px;
+      }
+
+      .footer-grid {
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom {
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .agri-field {
+        height:30%;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<div class="announcement">
-  🌱 Quality Plants · Bulk Supply · South India Delivery
-  <a href="#contact">Make an Enquiry →</a>
-</div>
+  <!-- =======================================================
+       ANIMATED KR NURSERIES + KSHITRIVA BACKGROUND
+       ======================================================= -->
 
-<header>
-  <div class="container nav">
+  <div class="agri-bg" aria-hidden="true">
 
-    <a class="brand" href="#top">
-      <b>KR</b>
-      <span>
-        <strong>KR NURSERIES</strong>
-        <small>Grow Green. Grow Better.</small>
-      </span>
-    </a>
+    <div class="agri-sun"></div>
 
-    <button id="menu" aria-label="Menu">☰</button>
+    <div class="agri-hills">
+      <div class="hill one"></div>
+      <div class="hill two"></div>
+      <div class="hill three"></div>
+    </div>
 
-    <nav id="nav">
-      <a href="#about">About</a>
-      <a href="#plants">Plants</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#bulk">Bulk Supply</a>
-      <a href="#branches">Branches</a>
-      <a href="#contact">Contact</a>
+    <div class="agri-field"></div>
 
-      <a
-        class="navwa"
-        href="https://wa.me/918328286323"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp
+    <div class="field-glow"></div>
+
+    <div class="agri-ribbon"></div>
+
+    <div class="particles" id="particles"></div>
+
+    <div class="leaves" id="leaves"></div>
+
+  </div>
+
+
+  <!-- =======================================================
+       ANNOUNCEMENT
+       ======================================================= -->
+
+  <div class="announcement">
+    🌱 <strong>KR NURSERIES</strong>
+    — Agricultural Plants • Bulk Supply • Multi-State Delivery
+    &nbsp; | &nbsp;
+    <strong>KSHITRIVA</strong> — Agriculture &amp; Farm Ecosystem
+  </div>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="#home" class="brand">
+
+        <div class="brand-logo">
+          KR
+        </div>
+
+        <div class="brand-text">
+          <strong>KR NURSERIES</strong>
+          <small>PKR Enterprises</small>
+        </div>
+
       </a>
-    </nav>
-
-  </div>
-</header>
-
-
-<main id="top">
-
-<section class="hero">
-
-  <div class="hero-bg"></div>
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <span class="pill">
-        PREMIUM AGRICULTURAL NURSERY
-      </span>
-
-      <h1>
-        Grow your future.<br>
-        <em>Grow it green.</em>
-      </h1>
-
-      <p>
-        Quality agricultural plants, nursery plants and dependable
-        bulk supply for farmers, growers, businesses and plantation
-        projects.
-      </p>
-
-      <div class="actions">
-
-        <a class="btn primary" href="#plants">
-          Explore Plants ↗
-        </a>
-
-        <a
-          class="btn glass"
-          href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20need%20a%20plant%20enquiry."
-          target="_blank"
-          rel="noopener"
-        >
-          Get Enquiry
-        </a>
-
-      </div>
-
-      <div class="trust">
-        <span><b>4</b> States</span>
-        <span><b>2</b> Branches</span>
-        <span><b>3000+</b> Bulk threshold</span>
-      </div>
-
-    </div>
-
-
-    <div class="hero-card">
-
-      <div class="hero-img">
-
-        <span>🌿 Healthy Plants</span>
-        <span>🚚 Bulk Delivery</span>
-
-      </div>
-
-      <div>
-        <small>KR NURSERIES</small>
-        <strong>From nursery to farm.</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-  <a class="scroll" href="#about">
-    Explore ↓
-  </a>
-
-</section>
-
-
-<section class="metrics">
-
-  <div class="container metrics-grid">
-
-    <div>
-      <b>01</b>
-      <span>Quality-focused<br>nursery supply</span>
-    </div>
-
-    <div>
-      <b>02</b>
-      <span>Direct<br>bulk enquiries</span>
-    </div>
-
-    <div>
-      <b>04</b>
-      <span>South Indian<br>delivery states</span>
-    </div>
-
-    <div>
-      <b>24/7</b>
-      <span>WhatsApp<br>enquiry channel</span>
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="about">
-
-  <div class="container split">
-
-    <div class="label">
-      01 — ABOUT US
-    </div>
-
-    <div>
-
-      <h2>
-        Plants that start<br>
-        <em>possibilities.</em>
-      </h2>
-
-      <p class="lead">
-        KR Nurseries is an agricultural nursery brand under
-        PKR Enterprises, focused on quality plants, practical
-        service and dependable supply for growers.
-      </p>
-
-      <p>
-        From individual requirements to large plantation orders,
-        we connect customers with nursery plants and bulk
-        agricultural supply, with delivery support across
-        Andhra Pradesh, Telangana, Tamil Nadu and Karnataka.
-      </p>
-
-      <a class="textlink" href="#contact">
-        Talk to our nursery team →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section cream" id="plants">
-
-  <div class="container">
-
-    <div class="head">
-
-      <div>
-
-        <div class="label">
-          02 — PLANT CATEGORIES
-        </div>
-
-        <h2>
-          Choose your <em>green.</em>
-        </h2>
-
-      </div>
-
-      <p>
-        Contact us for current availability,
-        quantities and bulk requirements.
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <article>
-
-        <i>🍊</i>
-
-        <small>01</small>
-
-        <h3>
-          Fruit Plants
-        </h3>
-
-        <p>
-          Suitable plants for farms, orchards and
-          agricultural plantation projects.
-        </p>
-
-        <a href="#contact">
-          Enquire →
-        </a>
-
-      </article>
-
-
-      <article class="featured">
-
-        <i>🌱</i>
-
-        <small>02</small>
-
-        <h3>
-          Agricultural Plants
-        </h3>
-
-        <p>
-          Nursery plants for agricultural cultivation
-          and plantation needs.
-        </p>
-
-        <a href="#contact">
-          Enquire →
-        </a>
-
-      </article>
-
-
-      <article>
-
-        <i>🌴</i>
-
-        <small>03</small>
-
-        <h3>
-          Farm Plantation
-        </h3>
-
-        <p>
-          Plant supply support for farms and larger
-          plantation requirements.
-        </p>
-
-        <a href="#bulk">
-          Bulk supply →
-        </a>
-
-      </article>
-
-
-      <article>
-
-        <i>🌿</i>
-
-        <small>04</small>
-
-        <h3>
-          Nursery Plants
-        </h3>
-
-        <p>
-          Healthy nursery-grown plants for growers,
-          farms and projects.
-        </p>
-
-        <a href="#contact">
-          Availability →
-        </a>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="gallery">
-
-  <div class="container">
-
-    <div class="head">
-
-      <div>
-
-        <div class="label">
-          03 — OUR NURSERY
-        </div>
-
-        <h2>
-          See what we're <em>growing.</em>
-        </h2>
-
-        <p>
-          Nursery, plants and agricultural activities.
-        </p>
-
-      </div>
-
-      <div class="gallery-btns">
-
-        <button id="galleryPrev" aria-label="Previous">
-          ←
-        </button>
-
-        <button id="galleryNext" aria-label="Next">
-          →
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div class="gallery-viewport">
-
-      <div id="galleryGrid"></div>
-
-    </div>
-
-    <div id="galleryDots"></div>
-
-  </div>
-
-</section>
-
-
-<section class="section bulk">
-
-  <div class="container">
-
-    <div class="bulkbox" id="bulk">
-
-      <div>
-
-        <div class="label light">
-          04 — BULK SUPPLY
-        </div>
-
-        <h2>
-          Planning something<br>
-          <em>big?</em>
-        </h2>
-
-        <p>
-          Need a large quantity of agricultural plants?
-          Tell us your crop, quantity and delivery location.
-        </p>
-
-        <div class="checks">
-          ✓ Bulk quantity orders · ✓ Agricultural plant supply<br>
-          ✓ Delivery support · ✓ Direct nursery enquiry
-        </div>
-
-        <a
-          class="btn white"
-          href="https://wa.me/918328286323?text=Hello%20KR%20Nurseries,%20I%20need%20a%20bulk%20plant%20quotation."
-          target="_blank"
-          rel="noopener"
-        >
-          Request Bulk Quote ↗
-        </a>
-
-      </div>
-
-
-      <div class="bulknum">
-
-        <b>
-          3000<span>+</span>
-        </b>
-
-        <strong>
-          quantity milestone
-        </strong>
-
-        <small>
-          Free delivery for qualifying agricultural
-          products above 3000 quantity.
-        </small>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section" id="branches">
-
-  <div class="container">
-
-    <div class="head">
-
-      <div>
-
-        <div class="label">
-          05 — LOCATIONS
-        </div>
-
-        <h2>
-          Visit a <em>branch.</em>
-        </h2>
-
-      </div>
-
-      <p>
-        Connect with the nearest KR Nurseries location.
-      </p>
-
-    </div>
-
-
-    <div class="branches">
-
-      <article>
-
-        <small>
-          MAIN NURSERY · 01
-        </small>
-
-        <h3>
-          Nayanapalle
-        </h3>
-
-        <p>
-          Palamaner–Krishnagiri Highway,
-          Kutheganipalli Cross,
-          Nayanapalle Village,
-          Santhipuram Mandal,
-          Kuppam Taluk,
-          Chittoor District,
-          Andhra Pradesh – 517401
-        </p>
-
-        <b>
-          T N Naveen Reddy
-        </b>
-
-        <a href="tel:+918328286323">
-          +91 83282 86323
-        </a>
-
-        <div>
-
-          <a
-            class="small primary"
-            href="https://wa.me/918328286323"
-            target="_blank"
-            rel="noopener"
-          >
-            WhatsApp
-          </a>
-
-          <a
-            class="small"
-            href="https://maps.app.goo.gl/LntgPRCBcq99Zmc17?g_st=awb"
-            target="_blank"
-            rel="noopener"
-          >
-            Maps
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <article>
-
-        <small>
-          NURSERY BRANCH · 02
-        </small>
-
-        <h3>
-          Ragavapalli
-        </h3>
-
-        <p>
-          NH 219,
-          Ragavapalli Village,
-          Near Kaigal,
-          Chittoor District,
-          Andhra Pradesh – 517415
-        </p>
-
-        <b>
-          B Kumar Reddy
-        </b>
-
-        <a href="tel:+918074625223">
-          +91 80746 25223
-        </a>
-
-        <div>
-
-          <a
-            class="small primary"
-            href="https://wa.me/918074625223"
-            target="_blank"
-            rel="noopener"
-          >
-            WhatsApp
-          </a>
-
-          <a
-            class="small"
-            href="https://maps.app.goo.gl/i98ctGgFZdVtbCnt5?g_st=awb"
-            target="_blank"
-            rel="noopener"
-          >
-            Maps
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="section cream" id="contact">
-
-  <div class="container contact">
-
-    <div>
-
-      <div class="label">
-        06 — CONTACT
-      </div>
-
-      <h2>
-        Let's grow<br>
-        <em>together.</em>
-      </h2>
-
-      <p class="lead">
-        Tell us what you need and our team can guide you
-        on availability, quantity and delivery.
-      </p>
-
-      <div class="contactlist">
-
-        <a href="tel:+918328286323">
-          ☎
-          <span>
-            CALL / WHATSAPP<br>
-            <b>+91 83282 86323</b>
-          </span>
-        </a>
-
-        <div>
-          🚚
-          <span>
-            DELIVERY<br>
-            <b>AP · TS · TN · KA</b>
-          </span>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <form id="enquiryForm">
-
-      <small>
-        PLANT ENQUIRY
-      </small>
-
-      <h3>
-        Tell us your requirement
-      </h3>
-
-      <div class="row">
-
-        <label>
-          Name
-          <input
-            id="name"
-            required
-            placeholder="Your name"
-          >
-        </label>
-
-        <label>
-          Phone
-          <input
-            id="phone"
-            required
-            placeholder="Mobile number"
-          >
-        </label>
-
-      </div>
-
-
-      <div class="row">
-
-        <label>
-          Plant
-          <input
-            id="plant"
-            placeholder="e.g. Fruit plants"
-          >
-        </label>
-
-        <label>
-          Quantity
-          <input
-            id="quantity"
-            type="number"
-            min="1"
-            placeholder="Approx. quantity"
-          >
-        </label>
-
-      </div>
-
-
-      <label>
-        Details
-
-        <textarea
-          id="message"
-          rows="5"
-          placeholder="Tell us about your requirement..."
-        ></textarea>
-
-      </label>
-
 
       <button
-        class="btn primary"
-        type="submit"
-      >
-        Send Enquiry via WhatsApp →
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu">
+        ☰
       </button>
 
-    </form>
+      <nav id="mainNav">
 
-  </div>
+        <a href="#about">About</a>
 
-</section>
+        <a href="#plants">Plants</a>
 
-</main>
+        <a href="#gallery">Gallery</a>
 
+        <a href="#bulk">Bulk Supply</a>
 
-<footer>
+        <a href="#branches">Branches</a>
 
-  <div class="container foot">
+        <a href="#contact" class="nav-cta">
+          Enquire
+        </a>
 
-    <div>
-
-      <a class="brand" href="#top">
-
-        <b>KR</b>
-
-        <span>
-          <strong>KR NURSERIES</strong>
-          <small>Grow Green. Grow Better.</small>
-        </span>
-
-      </a>
-
-      <p>
-        Quality agricultural plants and dependable
-        nursery supply.
-      </p>
+      </nav>
 
     </div>
 
-
-    <div>
-
-      <h4>
-        Explore
-      </h4>
-
-      <a href="#about">About</a>
-      <a href="#plants">Plants</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#bulk">Bulk Supply</a>
-
-    </div>
+  </header>
 
 
-    <div>
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
 
-      <h4>
-        Contact
-      </h4>
+  <main>
 
-      <a href="tel:+918328286323">
-        +91 83282 86323
-      </a>
+    <section
+      class="hero"
+      id="home">
 
-      <a
-        href="https://wa.me/918328286323"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp
-      </a>
+      <div class="hero-overlay"></div>
 
-    </div>
+      <div class="hero-content">
 
-  </div>
+        <div class="eyebrow">
+          <span></span>
+          Growing Agriculture. Growing Possibilities.
+        </div>
 
+        <h1>
+          <span>KR Nurseries</span>
+          Where Agriculture Begins.
+        </h1>
 
-  <div class="bottom">
+        <p class="hero-description">
+          Agricultural plants, nursery supply and bulk plant solutions
+          for farmers, growers and agricultural projects across
+          Andhra Pradesh, Telangana, Tamil Nadu and Karnataka.
+        </p>
 
-    <div class="container">
+        <div class="hero-actions">
 
-      © <span id="year"></span>
-      KR Nurseries · A PKR Enterprises Brand
+          <a
+            href="#plants"
+            class="btn btn-primary">
+            Explore Plants →
+          </a>
 
-    </div>
+          <a
+            href="#contact"
+            class="btn btn-secondary">
+            Send Enquiry
+          </a>
 
-  </div>
+        </div>
 
-</footer>
-
-
-<a
-  class="floatwa"
-  href="https://wa.me/918328286323"
-  target="_blank"
-  rel="noopener"
-  aria-label="WhatsApp"
->
-  ✆
-</a>
-
-
-<button
-  class="admintrigger"
-  id="adminTrigger"
-  aria-label="Admin"
->
-  ⚙
-</button>
-
-
-<div class="modal" id="adminModal">
-
-  <div class="modalbox">
-
-    <button id="adminClose">
-      ×
-    </button>
-
-
-    <div id="adminLogin">
-
-      <div class="label">
-        KR NURSERIES
       </div>
 
-      <h3>
-        Admin Access
-      </h3>
 
-      <p>
-        Authorized gallery management.
-      </p>
+      <div class="hero-brands">
 
-      <form id="adminLoginForm">
+        <div class="brand-pill">
+          🌱 KR NURSERIES
+        </div>
 
-        <label>
-          Authorized mobile
+        <div class="brand-pill">
+          🌾 KSHITRIVA
+        </div>
 
-          <input
-            id="adminPhone"
-            required
-          >
+        <div class="brand-pill">
+          ◈ PKR ENTERPRISES
+        </div>
 
-        </label>
-
-        <button
-          class="btn primary"
-          type="submit"
-        >
-          Login
-        </button>
-
-        <p id="loginError"></p>
-
-      </form>
-
-    </div>
-
-
-    <div id="adminPanel" hidden>
-
-      <div class="label">
-        GALLERY MANAGEMENT
       </div>
 
-      <h3>
-        Manage Gallery
-      </h3>
 
-      <form id="galleryForm">
+      <!-- Animated plants -->
 
-        <label>
-          Image title
-
-          <input
-            id="galleryTitle"
-            placeholder="Nursery image"
-          >
-
-        </label>
-
-        <label>
-          Select image
-
-          <input
-            id="galleryFile"
-            type="file"
-            accept="image/*"
-            required
-          >
-
-        </label>
+      <div class="hero-plants">
 
         <div
-          id="galleryPreview"
-          hidden
-        >
-          <img
-            id="galleryPreviewImg"
-            alt="Preview"
-          >
+          class="plant"
+          style="left:3%;--duration:4s"></div>
+
+        <div
+          class="plant"
+          style="left:9%;height:85px;--duration:5s"></div>
+
+        <div
+          class="plant"
+          style="left:15%;height:140px;--duration:6s"></div>
+
+        <div
+          class="plant"
+          style="left:23%;height:105px;--duration:4.5s"></div>
+
+        <div
+          class="plant"
+          style="left:32%;height:150px;--duration:5.5s"></div>
+
+        <div
+          class="plant"
+          style="left:41%;height:100px;--duration:4s"></div>
+
+        <div
+          class="plant"
+          style="left:50%;height:140px;--duration:6s"></div>
+
+        <div
+          class="plant"
+          style="left:59%;height:110px;--duration:4.5s"></div>
+
+        <div
+          class="plant"
+          style="left:68%;height:155px;--duration:5s"></div>
+
+        <div
+          class="plant"
+          style="left:78%;height:95px;--duration:4s"></div>
+
+        <div
+          class="plant"
+          style="left:88%;height:145px;--duration:5.5s"></div>
+
+        <div
+          class="plant"
+          style="left:96%;height:100px;--duration:4.5s"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
+
+    <section
+      class="section about"
+      id="about">
+
+      <div class="section-inner">
+
+        <div class="about-grid">
+
+          <div class="about-visual">
+
+            <div class="about-logo">
+              KR<br>
+              <small>Nurseries</small>
+            </div>
+
+          </div>
+
+          <div>
+
+            <div class="section-label">
+              About KR Nurseries
+            </div>
+
+            <h2 class="section-title">
+              Plants for a stronger agricultural future.
+            </h2>
+
+            <p class="section-description">
+              KR Nurseries is an agricultural nursery initiative
+              under PKR Enterprises, focused on supplying quality
+              agricultural plants and supporting farmers, growers
+              and bulk agricultural requirements.
+            </p>
+
+            <div class="about-points">
+
+              <div class="about-point">
+
+                <div class="check">✓</div>
+
+                <div>
+                  <strong>Agricultural Focus</strong>
+                  <p>
+                    Plants selected for agricultural and farming
+                    requirements.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="about-point">
+
+                <div class="check">✓</div>
+
+                <div>
+                  <strong>Bulk Supply</strong>
+                  <p>
+                    Solutions for farmers, growers and larger
+                    agricultural requirements.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="about-point">
+
+                <div class="check">✓</div>
+
+                <div>
+                  <strong>Multi-State Delivery</strong>
+                  <p>
+                    Delivery support across four South Indian
+                    states.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         KSHITRIVA
+         ===================================================== -->
+
+    <section
+      class="section kshitRiva"
+      id="kshitRiva">
+
+      <div class="section-inner">
+
+        <div class="kshit-grid">
+
+          <div>
+
+            <div class="section-label">
+              PKR Agriculture Ecosystem
+            </div>
+
+            <h2 class="section-title">
+              KSHITRIVA
+            </h2>
+
+            <p class="section-description">
+              A PKR agriculture-focused ecosystem concept connecting
+              agricultural products, plants, farming requirements
+              and future-ready agricultural opportunities.
+            </p>
+
+            <br>
+
+            <p class="section-description">
+              KR Nurseries represents the nursery and plant side of
+              this agricultural vision, while KSHITRIVA represents
+              the broader agricultural ecosystem.
+            </p>
+
+          </div>
+
+          <div class="kshit-card">
+
+            <div class="kshit-logo">
+              K
+            </div>
+
+            <h3>
+              KSHITRIVA
+            </h3>
+
+            <p>
+              Agriculture • Plants • Farming • Agricultural Products
+              • Rural Growth
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PLANT CATEGORIES
+         ===================================================== -->
+
+    <section
+      class="section categories"
+      id="plants">
+
+      <div class="section-inner">
+
+        <div class="section-label">
+          Agricultural Plants
+        </div>
+
+        <h2 class="section-title">
+          Explore Our Plant Categories
+        </h2>
+
+        <p class="section-description">
+          Explore agricultural plant categories available through
+          KR Nurseries. Contact us for current availability,
+          quantity and bulk requirements.
+        </p>
+
+
+        <div class="category-grid">
+
+          <article class="category">
+
+            <div class="category-icon">
+              🌱
+            </div>
+
+            <h3>
+              Fruit Plants
+            </h3>
+
+            <p>
+              Agricultural fruit plant varieties for farms,
+              orchards and growers.
+            </p>
+
+            <div class="category-number">
+              01
+            </div>
+
+          </article>
+
+
+          <article class="category">
+
+            <div class="category-icon">
+              🌳
+            </div>
+
+            <h3>
+              Timber &amp; Plantation
+            </h3>
+
+            <p>
+              Plantation-oriented plants for agricultural and
+              long-term farming requirements.
+            </p>
+
+            <div class="category-number">
+              02
+            </div>
+
+          </article>
+
+
+          <article class="category">
+
+            <div class="category-icon">
+              🌾
+            </div>
+
+            <h3>
+              Farm Plants
+            </h3>
+
+            <p>
+              Plant solutions suitable for agricultural land and
+              farm development.
+            </p>
+
+            <div class="category-number">
+              03
+            </div>
+
+          </article>
+
+
+          <article class="category">
+
+            <div class="category-icon">
+              🍃
+            </div>
+
+            <h3>
+              Other Agricultural Plants
+            </h3>
+
+            <p>
+              Ask our team about current agricultural plant
+              availability and bulk requirements.
+            </p>
+
+            <div class="category-number">
+              04
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALLERY
+         ===================================================== -->
+
+    <section
+      class="section gallery-section"
+      id="gallery">
+
+      <div class="section-inner">
+
+        <div class="section-label">
+          Nursery Gallery
+        </div>
+
+        <h2 class="section-title">
+          From Nursery to Farm
+        </h2>
+
+        <p class="section-description">
+          Explore KR Nurseries through our growing gallery.
+          Gallery images can be managed through the administrator
+          portal.
+        </p>
+
+
+        <div class="gallery-wrap">
+
+          <div class="gallery-viewport">
+
+            <div id="galleryGrid"></div>
+
+          </div>
+
+          <div class="gallery-controls">
+
+            <button
+              class="gallery-btn"
+              id="galleryPrev"
+              aria-label="Previous gallery">
+              ←
+            </button>
+
+            <div id="galleryDots"></div>
+
+            <button
+              class="gallery-btn"
+              id="galleryNext"
+              aria-label="Next gallery">
+              →
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BULK SUPPLY
+         ===================================================== -->
+
+    <section
+      class="section bulk"
+      id="bulk">
+
+      <div class="section-inner">
+
+        <div class="bulk-box">
+
+          <div class="bulk-grid">
+
+            <div>
+
+              <h2>
+                Growing in bulk?
+                Let's grow together.
+              </h2>
+
+              <p>
+                KR Nurseries supports agricultural bulk requirements
+                for farmers, growers and large planting projects.
+              </p>
+
+              <div class="bulk-list">
+
+                <span>
+                  <b>✓</b>
+                  Bulk agricultural plant supply
+                </span>
+
+                <span>
+                  <b>✓</b>
+                  Large quantity enquiries
+                </span>
+
+                <span>
+                  <b>✓</b>
+                  Multi-state delivery support
+                </span>
+
+                <span>
+                  <b>✓</b>
+                  Agricultural-focused nursery supply
+                </span>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <a
+                href="#contact"
+                class="btn btn-primary">
+                Request Bulk Supply →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DELIVERY
+         ===================================================== -->
+
+    <section
+      class="section delivery">
+
+      <div class="section-inner">
+
+        <div class="section-label">
+          Delivery Network
+        </div>
+
+        <h2 class="section-title">
+          Delivering Across South India
+        </h2>
+
+        <p class="section-description"
+           style="margin:auto">
+          KR Nurseries provides delivery support across
+          Andhra Pradesh, Telangana, Tamil Nadu and Karnataka.
+        </p>
+
+
+        <div class="states">
+
+          <div class="state">
+            Andhra Pradesh
+          </div>
+
+          <div class="state">
+            Telangana
+          </div>
+
+          <div class="state">
+            Tamil Nadu
+          </div>
+
+          <div class="state">
+            Karnataka
+          </div>
+
+        </div>
+
+
+        <p class="delivery-note">
+          Free delivery for agricultural products above
+          3000 quantity, subject to applicable conditions.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BRANCHES
+         ===================================================== -->
+
+    <section
+      class="section branches"
+      id="branches">
+
+      <div class="section-inner">
+
+        <div class="section-label">
+          Our Locations
+        </div>
+
+        <h2 class="section-title">
+          KR Nurseries Branches
+        </h2>
+
+
+        <div class="branch-grid">
+
+          <article class="branch">
+
+            <div class="branch-tag">
+              Main Nursery
+            </div>
+
+            <h3>
+              Nayanapalle
+            </h3>
+
+            <p>
+              Palamaner–Krishnagiri Highway,<br>
+              Kutheganipalli Cross,<br>
+              Nayanapalle Village,<br>
+              Santhipuram Mandal,<br>
+              Kuppam Taluk,<br>
+              Chittoor District,<br>
+              Andhra Pradesh – 517401
+            </p>
+
+            <div class="branch-contact">
+
+              <a
+                class="contact-chip"
+                href="tel:+9183282836323">
+                📞 8328286323
+              </a>
+
+              <a
+                class="contact-chip"
+                href="tel:+919704241024">
+                📞 9704241024
+              </a>
+
+              <a
+                class="contact-chip"
+                href="https://maps.app.goo.gl/LntgPRCBcq99Zmc17?g_st=awb"
+                target="_blank"
+                rel="noopener">
+                📍 Directions
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="branch">
+
+            <div class="branch-tag">
+              Branch
+            </div>
+
+            <h3>
+              Ragavapalli
+            </h3>
+
+            <p>
+              NH 219,<br>
+              Ragavapalli Village,<br>
+              Near Kaigal,<br>
+              Chittoor District,<br>
+              Andhra Pradesh – 517415
+            </p>
+
+            <div class="branch-contact">
+
+              <a
+                class="contact-chip"
+                href="tel:+918074625223">
+                📞 8074625223
+              </a>
+
+              <a
+                class="contact-chip"
+                href="https://maps.app.goo.gl/i98ctGgFZdVtbCnt5?g_st=awb"
+                target="_blank"
+                rel="noopener">
+                📍 Directions
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT / ENQUIRY
+         ===================================================== -->
+
+    <section
+      class="section contact"
+      id="contact">
+
+      <div class="section-inner">
+
+        <div class="contact-grid">
+
+          <div>
+
+            <div class="section-label">
+              Contact KR Nurseries
+            </div>
+
+            <h2 class="section-title">
+              Let's grow something
+              valuable together.
+            </h2>
+
+            <p class="section-description">
+              Send us your plant requirement, quantity and
+              delivery location. Our team can contact you
+              regarding availability and bulk supply.
+            </p>
+
+
+            <div class="contact-info">
+
+              <div class="contact-info-item">
+
+                <small>
+                  Main WhatsApp / Contact
+                </small>
+
+                <strong>
+                  8328286323
+                </strong>
+
+              </div>
+
+              <div class="contact-info-item">
+
+                <small>
+                  Business
+                </small>
+
+                <strong>
+                  KR Nurseries — PKR Enterprises
+                </strong>
+
+              </div>
+
+              <div class="contact-info-item">
+
+                <small>
+                  Agriculture Ecosystem
+                </small>
+
+                <strong>
+                  KSHITRIVA
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="enquiry-card">
+
+            <h3>
+              Send an Enquiry
+            </h3>
+
+            <p>
+              Fill the form and continue through WhatsApp.
+            </p>
+
+
+            <form id="enquiryForm">
+
+              <div class="form-grid">
+
+                <div class="field">
+
+                  <label>
+                    Your Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="customerName"
+                    required
+                    placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    Phone Number
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="customerPhone"
+                    required
+                    placeholder="Enter phone number">
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    Plant Category
+                  </label>
+
+                  <select id="plantCategory">
+
+                    <option value="">
+                      Select category
+                    </option>
+
+                    <option>
+                      Fruit Plants
+                    </option>
+
+                    <option>
+                      Timber & Plantation
+                    </option>
+
+                    <option>
+                      Farm Plants
+                    </option>
+
+                    <option>
+                      Other Agricultural Plants
+                    </option>
+
+                    <option>
+                      Bulk Requirement
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    Quantity
+                  </label>
+
+                  <input
+                    type="text"
+                    id="quantity"
+                    placeholder="Example: 5000 plants">
+
+                </div>
+
+
+                <div class="field full">
+
+                  <label>
+                    Delivery Location
+                  </label>
+
+                  <input
+                    type="text"
+                    id="deliveryLocation"
+                    placeholder="Village / City / District / State">
+
+                </div>
+
+
+                <div class="field full">
+
+                  <label>
+                    Requirement
+                  </label>
+
+                  <textarea
+                    id="message"
+                    placeholder="Tell us about your plant requirement"></textarea>
+
+                </div>
+
+              </div>
+
+
+              <button
+                type="submit"
+                class="btn btn-primary submit-btn">
+
+                Send Enquiry on WhatsApp →
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-brand">
+            KR NURSERIES
+          </div>
+
+          <p>
+            Agricultural plants and nursery supply under
+            PKR Enterprises.
+          </p>
+
+          <br>
+
+          <p>
+            <strong>
+              KSHITRIVA
+            </strong>
+            — Agriculture-focused ecosystem.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Quick Links
+          </div>
+
+          <div class="footer-links">
+
+            <a href="#about">
+              About
+            </a>
+
+            <a href="#plants">
+              Plants
+            </a>
+
+            <a href="#gallery">
+              Gallery
+            </a>
+
+            <a href="#bulk">
+              Bulk Supply
+            </a>
+
+            <a href="#branches">
+              Branches
+            </a>
+
+            <a href="#contact">
+              Enquiry
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Contact
+          </div>
+
+          <div class="footer-links">
+
+            <a href="tel:+9183282836323">
+              8328286323
+            </a>
+
+            <a
+              href="https://wa.me/9183282836323"
+              target="_blank"
+              rel="noopener">
+              WhatsApp
+            </a>
+
+            <a
+              href="https://krnurseries.sarvampada.info/"
+              target="_blank"
+              rel="noopener">
+              Website
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <div>
+          © <span id="year"></span>
+          KR Nurseries | PKR Enterprises.
+          All Rights Reserved.
         </div>
 
         <button
-          class="btn primary"
-          type="submit"
-        >
-          Upload Image
+          class="footer-admin"
+          id="adminOpen">
+          Admin Portal
         </button>
 
-      </form>
+      </div>
 
-      <h4>
-        Uploaded Images
-      </h4>
+    </div>
 
-      <div id="adminGalleryList"></div>
+  </footer>
+
+
+  <!-- =======================================================
+       WHATSAPP FLOATING BUTTON
+       ======================================================= -->
+
+  <a
+    class="floatwa"
+    href="https://wa.me/9183282836323"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with KR Nurseries on WhatsApp">
+
+    ☎
+
+  </a>
+
+
+  <!-- =======================================================
+       ADMIN MODAL
+       ======================================================= -->
+
+  <div
+    class="modal"
+    id="adminModal">
+
+    <div class="modalbox">
+
+      <div class="modal-head">
+
+        <h3>
+          KR Nurseries Admin Portal
+        </h3>
+
+        <button
+          class="close-modal"
+          id="closeAdmin"
+          aria-label="Close">
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- LOGIN -->
+
+      <div id="adminLogin">
+
+        <form id="adminLoginForm">
+
+          <div class="field">
+
+            <label>
+              Admin Login Code
+            </label>
+
+            <input
+              id="adminPhone"
+              type="password"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Enter admin code"
+              required>
+
+          </div>
+
+          <button
+            class="btn btn-primary"
+            style="margin-top:15px;width:100%"
+            type="submit">
+
+            Login
+
+          </button>
+
+          <div
+            class="admin-error"
+            id="loginError">
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <!-- ADMIN PANEL -->
+
+      <div
+        class="admin-panel"
+        id="adminPanel">
+
+        <h3>
+          Gallery Management
+        </h3>
+
+        <p style="margin:8px 0 20px;color:#657267;font-size:14px">
+          Upload nursery images for this browser.
+        </p>
+
+
+        <form id="galleryForm">
+
+          <div class="field">
+
+            <label>
+              Gallery Title
+            </label>
+
+            <input
+              type="text"
+              id="galleryTitle"
+              placeholder="Example: Fruit Plant Nursery">
+
+          </div>
+
+
+          <div
+            class="field"
+            style="margin-top:12px">
+
+            <label>
+              Select Image
+            </label>
+
+            <input
+              type="file"
+              id="galleryFile"
+              accept="image/*"
+              required>
+
+          </div>
+
+
+          <div
+            class="preview"
+            id="galleryPreview">
+
+            <img
+              id="galleryPreviewImg"
+              alt="Preview">
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="margin-top:15px">
+
+            Upload Image
+
+          </button>
+
+        </form>
+
+
+        <div
+          class="admin-gallery-list"
+          id="adminGalleryList">
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* =====================================================
+         BASIC SETTINGS
+         ===================================================== */
+
+      const ADMIN_LOGIN = "161118";
+
+      const GALLERY_KEY =
+        "kr_nurseries_gallery_v4";
+
+      const WHATSAPP =
+        "9183282836323";
 
 
-<script src="script.js"></script>
+      /* =====================================================
+         YEAR
+         ===================================================== */
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+      /* =====================================================
+         MOBILE MENU
+         ===================================================== */
+
+      const menuBtn =
+        document.getElementById("menuBtn");
+
+      const mainNav =
+        document.getElementById("mainNav");
+
+      menuBtn.addEventListener(
+        "click",
+        () => {
+
+          mainNav.classList.toggle("open");
+
+        }
+      );
+
+
+      mainNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+            mainNav.classList.remove("open");
+          }
+        );
+
+      });
+
+
+      /* =====================================================
+         ANIMATED PARTICLES
+         ===================================================== */
+
+      const particles =
+        document.getElementById("particles");
+
+      for(let i = 0; i < 45; i++) {
+
+        const particle =
+          document.createElement("span");
+
+        particle.className =
+          "particle";
+
+        particle.style.left =
+          Math.random() * 100 + "%";
+
+        particle.style.animationDuration =
+          (8 + Math.random() * 14) + "s";
+
+        particle.style.animationDelay =
+          (-Math.random() * 20) + "s";
+
+        particle.style.opacity =
+          .25 + Math.random() * .65;
+
+        particles.appendChild(particle);
+
+      }
+
+
+      /* =====================================================
+         ANIMATED LEAVES
+         ===================================================== */
+
+      const leaves =
+        document.getElementById("leaves");
+
+      for(let i = 0; i < 18; i++) {
+
+        const leaf =
+          document.createElement("span");
+
+        leaf.className =
+          "leaf";
+
+        leaf.style.left =
+          Math.random() * 100 + "%";
+
+        leaf.style.animationDuration =
+          (12 + Math.random() * 18) + "s";
+
+        leaf.style.animationDelay =
+          (-Math.random() * 20) + "s";
+
+        leaf.style.transform =
+          `scale(${.5 + Math.random() * .9})`;
+
+        leaves.appendChild(leaf);
+
+      }
+
+
+      /* =====================================================
+         DEFAULT GALLERY
+         ===================================================== */
+
+      const defaultGallery = [
+
+        {
+          title:"Agricultural Nursery",
+          image:
+            "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=85"
+        },
+
+        {
+          title:"Growing Plants",
+          image:
+            "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=85"
+        },
+
+        {
+          title:"Green Agriculture",
+          image:
+            "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=85"
+        },
+
+        {
+          title:"Farm Plantation",
+          image:
+            "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=85"
+        },
+
+        {
+          title:"Young Plants",
+          image:
+            "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=85"
+        },
+
+        {
+          title:"Agricultural Growth",
+          image:
+            "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=1200&q=85"
+        }
+
+      ];
+
+
+      function getGallery() {
+
+        try {
+
+          const stored =
+            localStorage.getItem(GALLERY_KEY);
+
+          if(stored) {
+
+            const parsed =
+              JSON.parse(stored);
+
+            if(Array.isArray(parsed)) {
+              return parsed;
+            }
+
+          }
+
+        } catch(error) {
+
+          console.warn(
+            "Gallery storage error",
+            error
+          );
+
+        }
+
+        return defaultGallery;
+
+      }
+
+
+      let gallery =
+        getGallery();
+
+
+      /* =====================================================
+         GALLERY STATE
+         ===================================================== */
+
+      let currentPage = 0;
+
+      let autoSlide = null;
+
+
+      function getItemsPerPage() {
+
+        if(window.innerWidth <= 600) {
+          return 1;
+        }
+
+        if(window.innerWidth <= 900) {
+          return 2;
+        }
+
+        return 3;
+
+      }
+
+
+      function getPageCount() {
+
+        return Math.max(
+          1,
+          Math.ceil(
+            gallery.length /
+            getItemsPerPage()
+          )
+        );
+
+      }
+
+
+      /* =====================================================
+         RENDER GALLERY
+         ===================================================== */
+
+      function renderGallery() {
+
+        const grid =
+          document.getElementById(
+            "galleryGrid"
+          );
+
+        const dots =
+          document.getElementById(
+            "galleryDots"
+          );
+
+        if(!grid || !dots) return;
+
+        const perPage =
+          getItemsPerPage();
+
+        const pageCount =
+          getPageCount();
+
+        if(currentPage >= pageCount) {
+          currentPage = 0;
+        }
+
+        grid.innerHTML = "";
+
+        const start =
+          currentPage * perPage;
+
+        const items =
+          gallery.slice(
+            start,
+            start + perPage
+          );
+
+
+        items.forEach(item => {
+
+          const card =
+            document.createElement("article");
+
+          card.className =
+            "gallery-item";
+
+          card.innerHTML = `
+
+            <img
+              src="${item.image}"
+              alt="${item.title || "KR Nurseries"}"
+              loading="lazy">
+
+            <div class="gallery-caption">
+
+              <strong>
+                ${escapeHtml(
+                  item.title ||
+                  "KR Nurseries"
+                )}
+              </strong>
+
+              <small>
+                KR Nurseries • KSHITRIVA
+              </small>
+
+            </div>
+
+          `;
+
+          grid.appendChild(card);
+
+        });
+
+
+        dots.innerHTML = "";
+
+        for(let i = 0; i < pageCount; i++) {
+
+          const dot =
+            document.createElement("button");
+
+          dot.className =
+            "gallery-dot" +
+            (i === currentPage
+              ? " active"
+              : "");
+
+          dot.setAttribute(
+            "aria-label",
+            `Gallery page ${i + 1}`
+          );
+
+          dot.addEventListener(
+            "click",
+            () => {
+
+              currentPage = i;
+
+              renderGallery();
+
+              restartAutoSlide();
+
+            }
+          );
+
+          dots.appendChild(dot);
+
+        }
+
+      }
+
+
+      /* =====================================================
+         HTML ESCAPE
+         ===================================================== */
+
+      function escapeHtml(value) {
+
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+
+      }
+
+
+      /* =====================================================
+         GALLERY NAVIGATION
+         ===================================================== */
+
+      document
+        .getElementById("galleryPrev")
+        .addEventListener(
+          "click",
+          () => {
+
+            const pages =
+              getPageCount();
+
+            currentPage =
+              (currentPage - 1 + pages)
+              % pages;
+
+            renderGallery();
+
+            restartAutoSlide();
+
+          }
+        );
+
+
+      document
+        .getElementById("galleryNext")
+        .addEventListener(
+          "click",
+          () => {
+
+            const pages =
+              getPageCount();
+
+            currentPage =
+              (currentPage + 1)
+              % pages;
+
+            renderGallery();
+
+            restartAutoSlide();
+
+          }
+        );
+
+
+      /* =====================================================
+         AUTO SLIDE
+         ===================================================== */
+
+      function startAutoSlide() {
+
+        clearInterval(autoSlide);
+
+        autoSlide =
+          setInterval(
+            () => {
+
+              const pages =
+                getPageCount();
+
+              if(pages <= 1) return;
+
+              currentPage =
+                (currentPage + 1)
+                % pages;
+
+              renderGallery();
+
+            },
+            4500
+          );
+
+      }
+
+
+      function restartAutoSlide() {
+
+        startAutoSlide();
+
+      }
+
+
+      /* =====================================================
+         TOUCH SWIPE
+         ===================================================== */
+
+      const galleryViewport =
+        document.querySelector(
+          ".gallery-viewport"
+        );
+
+      let touchStartX = 0;
+
+      galleryViewport.addEventListener(
+        "touchstart",
+        event => {
+
+          touchStartX =
+            event.touches[0].clientX;
+
+        },
+        {passive:true}
+      );
+
+
+      galleryViewport.addEventListener(
+        "touchend",
+        event => {
+
+          const touchEndX =
+            event.changedTouches[0].clientX;
+
+          const difference =
+            touchStartX - touchEndX;
+
+          if(Math.abs(difference) < 50) {
+            return;
+          }
+
+          const pages =
+            getPageCount();
+
+          if(difference > 0) {
+
+            currentPage =
+              (currentPage + 1)
+              % pages;
+
+          } else {
+
+            currentPage =
+              (currentPage - 1 + pages)
+              % pages;
+
+          }
+
+          renderGallery();
+
+          restartAutoSlide();
+
+        },
+        {passive:true}
+      );
+
+
+      window.addEventListener(
+        "resize",
+        () => {
+
+          renderGallery();
+
+        }
+      );
+
+
+      renderGallery();
+
+      startAutoSlide();
+
+
+      /* =====================================================
+         ENQUIRY → WHATSAPP
+         ===================================================== */
+
+      const enquiryForm =
+        document.getElementById(
+          "enquiryForm"
+        );
+
+
+      enquiryForm.addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+          const name =
+            document.getElementById(
+              "customerName"
+            ).value.trim();
+
+          const phone =
+            document.getElementById(
+              "customerPhone"
+            ).value.trim();
+
+          const category =
+            document.getElementById(
+              "plantCategory"
+            ).value.trim();
+
+          const quantity =
+            document.getElementById(
+              "quantity"
+            ).value.trim();
+
+          const location =
+            document.getElementById(
+              "deliveryLocation"
+            ).value.trim();
+
+          const message =
+            document.getElementById(
+              "message"
+            ).value.trim();
+
+
+          const text =
+`🌱 KR NURSERIES ENQUIRY
+
+Name: ${name}
+
+Phone: ${phone}
+
+Plant Category: ${category || "Not specified"}
+
+Quantity: ${quantity || "Not specified"}
+
+Delivery Location: ${location || "Not specified"}
+
+Requirement:
+${message || "Not specified"}
+
+Website:
+KR Nurseries | PKR Enterprises`;
+
+
+          const url =
+            "https://wa.me/" +
+            WHATSAPP +
+            "?text=" +
+            encodeURIComponent(text);
+
+
+          window.open(
+            url,
+            "_blank"
+          );
+
+        }
+      );
+
+
+      /* =====================================================
+         ADMIN
+         ===================================================== */
+
+      const adminModal =
+        document.getElementById(
+          "adminModal"
+        );
+
+      const adminOpen =
+        document.getElementById(
+          "adminOpen"
+        );
+
+      const closeAdmin =
+        document.getElementById(
+          "closeAdmin"
+        );
+
+      const adminLogin =
+        document.getElementById(
+          "adminLogin"
+        );
+
+      const adminPanel =
+        document.getElementById(
+          "adminPanel"
+        );
+
+      const adminLoginForm =
+        document.getElementById(
+          "adminLoginForm"
+        );
+
+      const adminCode =
+        document.getElementById(
+          "adminPhone"
+        );
+
+      const loginError =
+        document.getElementById(
+          "loginError"
+        );
+
+
+      adminOpen.addEventListener(
+        "click",
+        () => {
+
+          adminModal.classList.add("show");
+
+          adminLogin.style.display =
+            "block";
+
+          adminPanel.classList.remove(
+            "show"
+          );
+
+          adminCode.value = "";
+
+          loginError.textContent = "";
+
+        }
+      );
+
+
+      closeAdmin.addEventListener(
+        "click",
+        () => {
+
+          adminModal.classList.remove(
+            "show"
+          );
+
+        }
+      );
+
+
+      adminModal.addEventListener(
+        "click",
+        event => {
+
+          if(event.target === adminModal) {
+
+            adminModal.classList.remove(
+              "show"
+            );
+
+          }
+
+        }
+      );
+
+
+      /* =====================================================
+         ADMIN LOGIN
+         ===================================================== */
+
+      adminLoginForm.addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+          if(adminCode.value === ADMIN_LOGIN) {
+
+            adminLogin.style.display =
+              "none";
+
+            adminPanel.classList.add(
+              "show"
+            );
+
+            renderAdminGallery();
+
+          } else {
+
+            loginError.textContent =
+              "Invalid admin login code.";
+
+          }
+
+        }
+      );
+
+
+      /* =====================================================
+         GALLERY PREVIEW
+         ===================================================== */
+
+      const galleryFile =
+        document.getElementById(
+          "galleryFile"
+        );
+
+      const galleryPreview =
+        document.getElementById(
+          "galleryPreview"
+        );
+
+      const galleryPreviewImg =
+        document.getElementById(
+          "galleryPreviewImg"
+        );
+
+
+      galleryFile.addEventListener(
+        "change",
+        () => {
+
+          const file =
+            galleryFile.files[0];
+
+          if(!file) {
+
+            galleryPreview.style.display =
+              "none";
+
+            return;
+
+          }
+
+          const reader =
+            new FileReader();
+
+          reader.onload =
+            event => {
+
+              galleryPreviewImg.src =
+                event.target.result;
+
+              galleryPreview.style.display =
+                "block";
+
+            };
+
+          reader.readAsDataURL(file);
+
+        }
+      );
+
+
+      /* =====================================================
+         GALLERY UPLOAD
+         ===================================================== */
+
+      const galleryForm =
+        document.getElementById(
+          "galleryForm"
+        );
+
+
+      galleryForm.addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+          const title =
+            document.getElementById(
+              "galleryTitle"
+            ).value.trim();
+
+          const file =
+            galleryFile.files[0];
+
+          if(!file) return;
+
+          const reader =
+            new FileReader();
+
+          reader.onload =
+            event => {
+
+              gallery.unshift({
+
+                title:
+                  title ||
+                  "KR Nurseries",
+
+                image:
+                  event.target.result
+
+              });
+
+
+              try {
+
+                localStorage.setItem(
+                  GALLERY_KEY,
+                  JSON.stringify(gallery)
+                );
+
+              } catch(error) {
+
+                alert(
+                  "Image is too large for browser storage. Please use a smaller image."
+                );
+
+                return;
+
+              }
+
+
+              currentPage = 0;
+
+              renderGallery();
+
+              renderAdminGallery();
+
+              galleryForm.reset();
+
+              galleryPreview.style.display =
+                "none";
+
+            };
+
+
+          reader.readAsDataURL(file);
+
+        }
+      );
+
+
+      /* =====================================================
+         ADMIN GALLERY LIST
+         ===================================================== */
+
+      function renderAdminGallery() {
+
+        const list =
+          document.getElementById(
+            "adminGalleryList"
+          );
+
+        list.innerHTML = "";
+
+
+        gallery.forEach(
+          (item,index) => {
+
+            const row =
+              document.createElement(
+                "div"
+              );
+
+            row.className =
+              "admin-gallery-item";
+
+
+            row.innerHTML = `
+
+              <img
+                src="${item.image}"
+                alt="">
+
+              <div>
+                <strong>
+                  ${escapeHtml(
+                    item.title ||
+                    "KR Nurseries"
+                  )}
+                </strong>
+
+                <div
+                  style="
+                    font-size:11px;
+                    color:#758276;
+                    margin-top:3px;
+                  ">
+                  Gallery Image
+                </div>
+              </div>
+
+              <button
+                type="button"
+                data-index="${index}">
+                Delete
+              </button>
+
+            `;
+
+
+            row
+              .querySelector("button")
+              .addEventListener(
+                "click",
+                () => {
+
+                  if(
+                    !confirm(
+                      "Delete this gallery image?"
+                    )
+                  ) {
+                    return;
+                  }
+
+                  gallery.splice(
+                    index,
+                    1
+                  );
+
+
+                  try {
+
+                    localStorage.setItem(
+                      GALLERY_KEY,
+                      JSON.stringify(gallery)
+                    );
+
+                  } catch(error) {}
+
+                  currentPage = 0;
+
+                  renderGallery();
+
+                  renderAdminGallery();
+
+                }
+              );
+
+
+            list.appendChild(row);
+
+          }
+        );
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
