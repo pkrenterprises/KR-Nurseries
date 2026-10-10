@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const ADMIN_NUMBERS = ["9381661029"];
+  const ADMIN_NUMBERS = ["9381661029","83282863231611","161118"];
 
   const KEY = "kr_nurseries_gallery_v3";
 
