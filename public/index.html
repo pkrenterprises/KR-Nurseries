@@ -2804,67 +2804,264 @@ footer{
 </section>
 
 
-<!-- =======================================================
-     GALLERY
-======================================================= -->
+/* =========================================================
+   GALLERY — FULL PHOTO DISPLAY
+========================================================= */
 
-<section id="gallery">
+.gallery-wrap{
+    position:relative;
+    width:100%;
+}
 
-<div class="section">
+.gallery-viewport{
+    width:100%;
+    overflow:hidden;
+    border-radius:28px;
+}
 
-    <div class="section-heading">
+/* Slider track */
+#galleryGrid{
+    display:flex;
+    flex-wrap:nowrap;
 
-        <div class="eyebrow">
-            Nursery Gallery
-        </div>
+    width:100%;
 
-        <h2>
-            From nursery to field.
-        </h2>
+    gap:14px;
 
-        <p>
-            Our gallery can be updated through the administrator
-            portal.
-        </p>
+    transition:
+        transform .55s cubic-bezier(.22,.61,.36,1);
 
-    </div>
+    will-change:transform;
+}
 
+/* =========================================================
+   GALLERY CARD
+========================================================= */
 
-    <div class="gallery-wrap">
+.gallery-item{
+    position:relative;
 
-        <div class="gallery-viewport">
+    flex:0 0 calc(
+        (100% - 28px) / 3
+    );
 
-            <div id="galleryGrid"></div>
+    min-width:0;
 
-        </div>
+    height:300px;
 
-        <div id="galleryDots"></div>
+    overflow:hidden;
 
-        <div class="gallery-btns">
+    border-radius:20px;
 
-            <button
-                class="gallery-btn"
-                id="galleryPrev"
-                aria-label="Previous gallery">
-                ←
-            </button>
+    background:#102c18;
 
-            <button
-                class="gallery-btn"
-                id="galleryNext"
-                aria-label="Next gallery">
-                →
-            </button>
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 
-        </div>
+    display:flex;
 
-    </div>
+    align-items:center;
 
-</div>
+    justify-content:center;
+}
 
-</section>
+/* =========================================================
+   FULL PHOTO
+========================================================= */
 
+.gallery-item img{
+    width:100%;
+    height:100%;
 
+    display:block;
+
+    /*
+       IMPORTANT:
+       Shows the COMPLETE IMAGE.
+       No cropping.
+    */
+    object-fit:contain;
+
+    object-position:center;
+
+    background:#102c18;
+
+    transition:
+        transform .5s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.03);
+}
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.gallery-caption{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:
+        45px 18px
+        16px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.88)
+        );
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    pointer-events:none;
+}
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.gallery-btns{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.gallery-btn{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:
+        .25s ease;
+}
+
+.gallery-btn:hover{
+    background:#2f8d46;
+
+    transform:
+        translateY(-2px);
+}
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+#galleryDots{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:7px;
+
+    margin-top:16px;
+
+    min-height:10px;
+}
+
+.gallery-dot{
+    width:8px;
+    height:8px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    border:0;
+
+    background:
+        rgba(255,255,255,.25);
+
+    cursor:pointer;
+
+    transition:
+        width .25s ease,
+        background .25s ease;
+}
+
+.gallery-dot.active{
+    width:25px;
+
+    border-radius:99px;
+
+    background:#a8ea72;
+}
+
+/* =========================================================
+   TABLET — 2 PHOTOS
+========================================================= */
+
+@media(max-width:900px){
+
+    .gallery-item{
+        flex:0 0 calc(
+            (100% - 14px) / 2
+        );
+
+        height:280px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE — 1 FULL PHOTO
+========================================================= */
+
+@media(max-width:600px){
+
+    .gallery-viewport{
+        border-radius:22px;
+    }
+
+    #galleryGrid{
+        gap:10px;
+    }
+
+    .gallery-item{
+        flex:0 0 100%;
+
+        height:280px;
+
+        border-radius:18px;
+    }
+
+    .gallery-caption{
+        padding:
+            40px 15px
+            14px;
+
+        font-size:14px;
+    }
+
+}
 <!-- =======================================================
      BULK SUPPLY
 ======================================================= -->
